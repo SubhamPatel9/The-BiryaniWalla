@@ -4,51 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The BiryaniWalla — Royal Dum Biryani &amp; Authentic Mandi | Jharsuguda</title>
-  <meta name="description" content="The BiryaniWalla in Purani Basti, Jharsuguda, Odisha. Royal Dum Biryani, Authentic Arabian &amp; Indian Mandi Platters, Charcoal Tandoor, and Slow-Cooked Spices." />
+  <meta name="description" content="The BiryaniWalla in Purani Basti, Jharsuguda, Odisha. Royal Dum Biryani, Authentic Mandi Platters &amp; Slow-Cooked Spices." />
   <meta property="og:title" content="The BiryaniWalla — Royal Dum Biryani &amp; Authentic Mandi | Jharsuguda" />
-  <meta property="og:description" content="Slow-cooked Dum Biryani, signature Chicken &amp; Mutton Mandi platters, and family dining on NH-49, Kali Mandir Rd, Jharsuguda." />
+  <meta property="og:description" content="Slow-cooked Dum Biryani &amp; signature Mandi platters on NH-49, Kali Mandir Rd, Jharsuguda." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      /* Brand Palette */
-      --charcoal: #14110F;
-      --espresso: #1E1916;
-      --espresso-elevated: #26201C;
-      --parchment: #FAF6F0;
-      --sand: #F1E9DD;
-      --sand-card: #FFFFFF;
-      --saffron: #D98A2B;
-      --saffron-hover: #C4791E;
-      --terracotta: #B84A27;
-      --terracotta-dark: #9B3B1C;
-      --veg-green: #2E7D32;
-      --ink-dark: #14110F;
-      --ink-muted-light: #59514B;
-      --ink-light: #FAF6F0;
-      --ink-muted-dark: #B5ABA2;
-      --hairline-dark: rgba(250, 246, 240, 0.12);
-      --hairline-light: rgba(20, 17, 15, 0.11);
+      color-scheme: dark;
+      --bg-obsidian: #0C0B0A;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --bg-card-hover: rgba(255, 255, 255, 0.055);
+      --bg-ticket: #F3F1ED;
+      --border-subtle: rgba(255, 255, 255, 0.13);
+      --border-warm: rgba(232, 122, 36, 0.45);
+      --accent: #E87A24;
+      --accent-bright: #F48C37;
+      --accent-dark: #C86012;
+      --text-white: #F7F5F2;
+      --text-muted: #9D968E;
+      --text-dark: #141210;
+      --veg-green: #38A169;
 
-      /* Typography */
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Outfit', sans-serif;
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      /* Layout & Radii */
-      --container: 1200px;
+      --container: 1180px;
       --header-h: 72px;
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 18px;
-
-      /* Motion */
-      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-      --t-fast: 180ms;
-      --t-med: 420ms;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after {
@@ -65,23 +52,12 @@
 
     body {
       font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--ink-dark);
-      background-color: var(--charcoal);
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text-white);
+      background-color: var(--bg-obsidian);
       overflow-x: clip;
       -webkit-font-smoothing: antialiased;
-    }
-
-    /* Subtle editorial paper/grain overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.032;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
     img {
@@ -103,10 +79,11 @@
       cursor: pointer;
       border: none;
       background: none;
+      color: inherit;
     }
 
     :focus-visible {
-      outline: 2px solid var(--saffron);
+      outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
 
@@ -122,7 +99,7 @@
     }
 
     /* ============================================================
-       HEADER / TOP BAR (3-Zone Contract)
+       HEADER — Exact Reference Layout
        ============================================================ */
     .site-header {
       position: fixed;
@@ -133,24 +110,23 @@
       height: var(--header-h);
       display: flex;
       align-items: center;
-      background: rgba(20, 17, 15, 0.72);
+      background: rgba(12, 11, 10, 0.82);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(250, 246, 240, 0.08);
-      transition: background var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: background 180ms var(--ease), border-color 180ms var(--ease);
     }
 
     .site-header.is-scrolled {
-      background: rgba(20, 17, 15, 0.94);
-      border-bottom-color: rgba(217, 138, 43, 0.22);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      background: rgba(12, 11, 10, 0.96);
+      border-bottom-color: rgba(255, 255, 255, 0.1);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 32px;
+      gap: 24px;
       width: 100%;
       max-width: var(--container);
       margin-inline: auto;
@@ -158,62 +134,50 @@
     }
 
     .brand-wordmark {
-      font-family: var(--font-serif);
-      font-size: 1.55rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--ink-light);
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-white);
       white-space: nowrap;
       flex-shrink: 0;
     }
 
     .brand-wordmark span {
-      color: var(--saffron);
+      color: var(--accent);
     }
 
     .primary-nav {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 8px;
     }
 
     .nav-link {
-      position: relative;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       font-weight: 500;
-      color: var(--ink-muted-dark);
-      padding-block: 6px;
+      color: var(--text-muted);
+      padding: 7px 14px;
+      border-radius: 6px;
       white-space: nowrap;
       flex-shrink: 0;
-      transition: color var(--t-fast) var(--ease-out);
+      transition: color 180ms var(--ease), background 180ms var(--ease);
     }
 
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1.5px;
-      background: var(--saffron);
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform var(--t-fast) var(--ease-out);
+    .nav-link:hover {
+      color: var(--text-white);
     }
 
-    .nav-link:hover,
     .nav-link.is-active {
-      color: var(--ink-light);
-    }
-
-    .nav-link.is-active::after {
-      transform: scaleX(1);
+      background: var(--text-white);
+      color: var(--text-dark);
+      font-weight: 600;
     }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
     }
 
@@ -221,21 +185,26 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 18px;
+      padding: 8px 14px;
       min-height: 40px;
-      border-radius: var(--radius-sm);
-      background: var(--saffron);
-      color: var(--charcoal);
+      border-radius: 8px;
       font-size: 0.875rem;
       font-weight: 600;
+      color: var(--text-white);
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.04);
       white-space: nowrap;
       flex-shrink: 0;
-      transition: background var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+      transition: border-color 180ms var(--ease), background 180ms var(--ease);
     }
 
     .bag-trigger:hover {
-      background: var(--saffron-hover);
-      transform: translateY(-1px);
+      border-color: var(--accent);
+      background: rgba(232, 122, 36, 0.12);
+    }
+
+    .bag-trigger .bag-label span {
+      color: var(--accent);
     }
 
     .bag-count {
@@ -245,11 +214,11 @@
       min-width: 22px;
       height: 22px;
       padding-inline: 6px;
-      border-radius: 4px;
-      background: var(--charcoal);
-      color: var(--parchment);
+      border-radius: 5px;
+      background: var(--accent);
+      color: var(--text-dark);
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .mobile-menu-btn {
@@ -258,9 +227,9 @@
       justify-content: center;
       width: 44px;
       height: 44px;
-      border-radius: var(--radius-sm);
-      color: var(--ink-light);
-      border: 1px solid var(--hairline-dark);
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
     }
 
     /* Mobile Drawer */
@@ -268,7 +237,7 @@
       position: fixed;
       inset: 0;
       z-index: 200;
-      background: rgba(20, 17, 15, 0.98);
+      background: rgba(12, 11, 10, 0.98);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -277,7 +246,8 @@
       visibility: hidden;
       pointer-events: none;
       transform: translateY(-8px);
-      transition: opacity var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out), visibility var(--t-fast);
+      transition: opacity 180ms var(--ease), transform 180ms var(--ease), visibility 180ms;
+      overscroll-behavior: contain;
     }
 
     .mobile-drawer.is-open {
@@ -296,133 +266,177 @@
     .mobile-close-btn {
       width: 44px;
       height: 44px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: var(--ink-light);
-      border: 1px solid var(--hairline-dark);
-      border-radius: var(--radius-sm);
     }
 
     .mobile-nav-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-block: 32px;
+      gap: 6px;
+      margin-block: 24px;
     }
 
     .mobile-nav-link {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--ink-light);
-      padding-block: 8px;
-      border-bottom: 1px solid var(--hairline-dark);
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      padding-block: 12px;
+      min-height: 52px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .mobile-drawer-meta {
       font-size: 0.875rem;
-      color: var(--ink-muted-dark);
+      color: var(--text-muted);
       line-height: 1.6;
     }
 
     /* ============================================================
-       BUTTON SYSTEM
+       SHARED ORANGE CTA BUTTONS & BRACKET HEADINGS
        ============================================================ */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 26px;
-      min-height: 46px;
-      border-radius: var(--radius-sm);
-      background: var(--saffron);
-      color: var(--charcoal);
-      font-weight: 600;
-      font-size: 0.9375rem;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: background var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
-    }
-
-    .btn-primary:hover {
-      background: var(--saffron-hover);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary-dark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 26px;
-      min-height: 46px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(250, 246, 240, 0.28);
-      color: var(--ink-light);
-      font-weight: 600;
-      font-size: 0.9375rem;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: border-color var(--t-fast) var(--ease-out), background var(--t-fast) var(--ease-out);
-    }
-
-    .btn-secondary-dark:hover {
-      border-color: var(--saffron);
-      background: rgba(217, 138, 43, 0.08);
-    }
-
-    .btn-terracotta {
+    .btn-orange {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 20px;
-      min-height: 42px;
-      border-radius: var(--radius-sm);
-      background: var(--terracotta);
-      color: var(--parchment);
-      font-weight: 600;
+      padding: 12px 24px;
+      min-height: 44px;
+      border-radius: 10px 10px 10px 4px;
+      background: linear-gradient(135deg, var(--accent-bright), var(--accent-dark));
+      color: var(--text-white);
       font-size: 0.875rem;
+      font-weight: 700;
       white-space: nowrap;
       flex-shrink: 0;
-      transition: background var(--t-fast) var(--ease-out), transform var(--t-fast) var(--ease-out);
+      transition: transform 180ms var(--ease), filter 180ms var(--ease);
     }
 
-    .btn-terracotta:hover {
-      background: var(--terracotta-dark);
+    .btn-orange:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 22px;
+      min-height: 44px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-white);
+      font-size: 0.875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: border-color 180ms var(--ease), background 180ms var(--ease);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      background: rgba(232, 122, 36, 0.1);
+    }
+
+    .icon-bag-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      border: 1px solid var(--border-warm);
+      background: rgba(232, 122, 36, 0.12);
+      color: var(--accent-bright);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 180ms var(--ease), color 180ms var(--ease), transform 180ms var(--ease);
+    }
+
+    .icon-bag-btn:hover {
+      background: var(--accent);
+      color: var(--text-white);
       transform: translateY(-1px);
     }
 
-    /* ============================================================
-       IMAGE FRAME & FALLBACK
-       ============================================================ */
+    /* Reference Corner-Bracket Section Title */
+    .bracket-heading-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+
+    .bracket-heading {
+      position: relative;
+      display: inline-block;
+      padding: 6px 22px;
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-white);
+      text-align: center;
+    }
+
+    .bracket-heading span {
+      color: var(--accent);
+    }
+
+    .bracket-heading::before,
+    .bracket-heading::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 26px;
+      border-color: var(--accent);
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    .bracket-heading::before {
+      left: 0;
+      bottom: 4px;
+      border-width: 0 0 2px 2px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .bracket-heading::after {
+      right: 0;
+      top: 4px;
+      border-width: 2px 2px 0 0;
+      border-top-right-radius: 8px;
+    }
+
+    /* Image Frame & Fallback */
     .media-frame {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #27201B 0%, #191411 100%);
+      background: #171411;
     }
 
     .media-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 600ms var(--ease-out);
     }
 
     .media-fallback {
       position: absolute;
       inset: 0;
       display: none;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 20px;
       text-align: center;
-      color: var(--ink-muted-dark);
-      background: radial-gradient(circle at 30% 20%, rgba(217, 138, 43, 0.16), transparent 60%), #1E1916;
+      padding: 16px;
+      color: var(--text-muted);
+      font-size: 0.8125rem;
     }
 
     .media-frame.is-broken img {
@@ -434,259 +448,313 @@
     }
 
     /* ============================================================
-       1. HERO SECTION (#home) — Dark Editorial
+       1. HERO SECTION (#home) — Exact WorldPlate Reference Match
        ============================================================ */
     .hero-section {
-      position: relative;
-      background:
-        radial-gradient(circle at 76% 36%, rgba(217, 138, 43, 0.14), transparent 48%),
-        radial-gradient(circle at 18% 82%, rgba(184, 74, 39, 0.12), transparent 44%),
-        var(--charcoal);
-      color: var(--ink-light);
-      padding-top: calc(var(--header-h) + 48px);
+      padding-top: calc(var(--header-h) + 44px);
       padding-bottom: 56px;
-      border-bottom: 1px solid var(--hairline-dark);
+      background:
+        radial-gradient(circle at 75% 32%, rgba(232, 122, 36, 0.12), transparent 44%),
+        var(--bg-obsidian);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-      gap: 56px;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-block: 12px;
-    }
-
-    .editorial-kicker {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--saffron);
-      margin-bottom: 16px;
+      gap: 40px;
+      align-items: center;
     }
 
     .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.65rem, 4.7vw, 4.35rem);
-      font-weight: 600;
-      line-height: 1.04;
-      letter-spacing: -0.02em;
-      color: var(--ink-light);
-      text-wrap: balance;
-      margin-bottom: 22px;
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.6vw, 4.1rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      color: var(--text-white);
+      margin-bottom: 18px;
     }
 
-    .hero-title em {
-      font-style: italic;
-      color: var(--saffron);
-      font-weight: 600;
+    .hero-taste-word {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 6px;
+    }
+
+    .hero-inline-avatars {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      margin-inline: 6px;
+    }
+
+    .hero-inline-avatars img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--bg-obsidian);
+      margin-left: -10px;
+    }
+
+    .hero-inline-avatars img:first-child {
+      margin-left: 0;
     }
 
     .hero-subtitle {
-      font-size: 1.0625rem;
-      line-height: 1.65;
-      color: var(--ink-muted-dark);
-      max-width: 54ch;
-      margin-bottom: 32px;
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 36px;
-    }
-
-    .hero-meta-strip {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      padding-top: 24px;
-      border-top: 1px solid var(--hairline-dark);
-    }
-
-    .hero-meta-item strong {
-      display: block;
       font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--ink-light);
-      margin-bottom: 2px;
+      color: var(--text-muted);
+      max-width: 44ch;
+      margin-bottom: 26px;
     }
 
-    .hero-meta-item span {
-      display: block;
-      font-size: 0.8125rem;
-      color: var(--ink-muted-dark);
-    }
-
-    .hero-visual {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-image-card {
-      position: relative;
-      height: 100%;
-      min-height: 440px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(217, 138, 43, 0.26);
-      box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-image-scrim {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(20, 17, 15, 0.86) 100%);
-      pointer-events: none;
-    }
-
-    .hero-caption-bar {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 22px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .hero-caption-title {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--ink-light);
-      line-height: 1.15;
-    }
-
-    .hero-caption-sub {
-      font-size: 0.8125rem;
-      color: var(--ink-muted-dark);
-      margin-top: 4px;
-    }
-
-    .hero-caption-price {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: var(--saffron);
-      white-space: nowrap;
-    }
-
-    /* Full-width Service Highlights Strip below hero split */
-    .trust-strip {
-      margin-top: 44px;
-      padding-top: 24px;
-      border-top: 1px solid var(--hairline-dark);
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .trust-cell {
+    .hero-actions {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 12px;
     }
 
-    .trust-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: var(--radius-sm);
-      background: rgba(217, 138, 43, 0.12);
-      border: 1px solid rgba(217, 138, 43, 0.24);
-      color: var(--saffron);
+    .hero-bowl-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-bowl-circle {
+      width: min(410px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75);
+    }
+
+    /* Tilted Notched White Ticket Strip */
+    .ticket-banner-wrap {
+      margin-top: 44px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ticket-banner {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      background: var(--bg-ticket);
+      color: var(--text-dark);
+      border-radius: 18px;
+      padding: 24px 120px 24px 36px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .trust-text strong {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--ink-light);
-    }
-
-    .trust-text span {
-      display: block;
-      font-size: 0.8125rem;
-      color: var(--ink-muted-dark);
-    }
-
-    /* ============================================================
-       SHARED SECTION HEADERS
-       ============================================================ */
-    .section-light {
-      background: var(--parchment);
-      color: var(--ink-dark);
-      padding-block: 88px;
-    }
-
-    .section-sand {
-      background: var(--sand);
-      color: var(--ink-dark);
-      padding-block: 88px;
-    }
-
-    .section-dark {
-      background: var(--espresso);
-      color: var(--ink-light);
-      padding-block: 88px;
-    }
-
-    .section-header-split {
-      display: flex;
-      align-items: flex-end;
       justify-content: space-between;
-      gap: 32px;
-      margin-bottom: 40px;
+      gap: 24px;
+      transform: rotate(-1deg);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
     }
 
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.4vw, 3rem);
+    /* Top & Bottom Center Ticket Cutouts */
+    .ticket-banner::before,
+    .ticket-banner::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--bg-obsidian);
+      transform: translateX(-50%);
+    }
+
+    .ticket-banner::before {
+      top: -17px;
+    }
+
+    .ticket-banner::after {
+      bottom: -17px;
+    }
+
+    .ticket-left h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .ticket-mini-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ticket-mini-avatars {
+      display: flex;
+      align-items: center;
+    }
+
+    .ticket-mini-avatars img,
+    .ticket-mini-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--bg-ticket);
+      margin-left: -8px;
+    }
+
+    .ticket-mini-avatars img:first-child {
+      margin-left: 0;
+    }
+
+    .ticket-mini-badge {
+      background: var(--accent);
+      color: var(--text-white);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ticket-mini-caption {
+      font-size: 0.75rem;
+      color: #55504A;
       font-weight: 600;
-      line-height: 1.1;
-      letter-spacing: -0.015em;
-      text-wrap: balance;
     }
 
-    .section-lead {
-      font-size: 1rem;
-      max-width: 46ch;
-      line-height: 1.6;
+    .ticket-right {
+      text-align: center;
+      padding-left: 24px;
     }
 
-    .section-light .section-lead,
-    .section-sand .section-lead {
-      color: var(--ink-muted-light);
+    .ticket-big {
+      font-family: var(--font-display);
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text-dark);
     }
 
-    .section-dark .section-lead {
-      color: var(--ink-muted-dark);
+    .ticket-sub {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #46413C;
+      margin-top: 4px;
+    }
+
+    .ticket-plate {
+      position: absolute;
+      right: -28px;
+      top: 50%;
+      transform: translateY(-50%) rotate(1deg);
+      width: 122px;
+      height: 122px;
+      border-radius: 50%;
+      border: 4px solid var(--bg-ticket);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
     }
 
     /* ============================================================
-       2. MENU SECTION (#menu) — Warm Parchment Editorial
+       2. SPECIALS SHOWCASE (#special) — "Our Best Specials"
        ============================================================ */
+    .specials-section {
+      position: relative;
+      padding-block: 72px;
+      overflow: hidden;
+    }
+
+    .specials-ambient-plate {
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      opacity: 0.14;
+      pointer-events: none;
+      filter: blur(1px);
+    }
+
+    .specials-stack {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 880px;
+      margin-inline: auto;
+    }
+
+    .special-row-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 36px;
+      padding: 28px 36px;
+      border-radius: 28px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(20, 18, 16, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .special-row-card.is-reversed .special-row-media {
+      order: 2;
+    }
+
+    .special-row-media {
+      width: 240px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      margin-inline: auto;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55);
+    }
+
+    .special-row-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .special-row-info p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      max-width: 34ch;
+    }
+
+    .special-row-price {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 16px;
+    }
+
+    .special-row-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ============================================================
+       3. MENU SECTION (#menu) — 3x2 Dark Rounded Cards
+       ============================================================ */
+    .menu-section {
+      padding-block: 68px;
+    }
+
     .menu-controls {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--hairline-light);
-      margin-bottom: 36px;
+      gap: 12px;
+      margin-bottom: 32px;
       min-width: 0;
       max-width: 100%;
     }
@@ -701,68 +769,67 @@
     }
 
     .menu-tab {
-      padding: 10px 18px;
+      padding: 9px 16px;
       min-height: 40px;
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
+      border-radius: 8px;
+      font-size: 0.8125rem;
       font-weight: 600;
-      color: var(--ink-muted-light);
-      background: var(--sand);
-      border: 1px solid transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
       white-space: nowrap;
       flex-shrink: 0;
-      transition: background var(--t-fast) var(--ease-out), color var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out);
+      transition: background 180ms var(--ease), color 180ms var(--ease), border-color 180ms var(--ease);
     }
 
     .menu-tab:hover {
-      color: var(--ink-dark);
-      border-color: var(--hairline-light);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.28);
     }
 
     .menu-tab.is-active {
-      background: var(--charcoal);
-      color: var(--parchment);
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--text-white);
     }
 
     .veg-filter-toggle {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 14px;
+      padding: 8px 14px;
       min-height: 40px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--hairline-light);
-      background: var(--sand-card);
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
       font-size: 0.8125rem;
       font-weight: 600;
-      color: var(--ink-dark);
+      color: var(--text-white);
       white-space: nowrap;
     }
 
     .veg-filter-toggle[aria-pressed="true"] {
       border-color: var(--veg-green);
-      background: rgba(46, 125, 50, 0.08);
-      color: #1B5E20;
+      background: rgba(56, 161, 105, 0.14);
     }
 
-    /* Authentic FSSAI Dietary Square Indicator */
     .diet-mark {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
       border-radius: 2px;
-      border: 1.5px solid var(--terracotta);
+      border: 1.5px solid var(--accent);
       flex-shrink: 0;
     }
 
     .diet-mark::after {
       content: "";
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
-      background: var(--terracotta);
+      background: var(--accent);
     }
 
     .diet-mark.is-veg {
@@ -776,64 +843,54 @@
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 22px;
     }
 
     .dish-card {
-      background: var(--sand-card);
-      border: 1px solid var(--hairline-light);
-      border-radius: var(--radius-md);
-      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 22px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
-      transition: transform var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out);
+      transition: background 180ms var(--ease), border-color 180ms var(--ease), transform 180ms var(--ease);
     }
 
     .dish-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.24);
       transform: translateY(-2px);
-      box-shadow: 0 14px 32px rgba(20, 17, 15, 0.08);
     }
 
     .dish-media {
-      aspect-ratio: 4 / 3;
-      width: 100%;
+      width: 148px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      margin: 4px auto 18px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
     }
 
-    .dish-card:hover .dish-media img {
-      transform: scale(1.03);
-    }
-
-    .dish-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .dish-meta-line {
+    .dish-title-row {
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--ink-muted-light);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .dish-title {
-      font-family: var(--font-serif);
-      font-size: 1.375rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
       font-weight: 700;
+      color: var(--text-white);
       line-height: 1.2;
-      color: var(--ink-dark);
-      margin-bottom: 8px;
     }
 
     .dish-desc {
-      font-size: 0.875rem;
-      color: var(--ink-muted-light);
-      line-height: 1.55;
-      margin-bottom: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 14px;
       flex: 1;
     }
 
@@ -846,20 +903,20 @@
     .portion-btn {
       flex: 1;
       padding: 6px 8px;
-      border-radius: 5px;
-      border: 1px solid var(--hairline-light);
-      background: var(--parchment);
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.02);
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--ink-muted-light);
+      color: var(--text-muted);
       white-space: nowrap;
-      transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+      transition: background 150ms, color 150ms, border-color 150ms;
     }
 
     .portion-btn.is-selected {
-      background: var(--charcoal);
-      border-color: var(--charcoal);
-      color: var(--parchment);
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--text-white);
     }
 
     .dish-footer {
@@ -867,254 +924,168 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding-top: 14px;
-      border-top: 1px solid var(--hairline-light);
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .dish-price {
-      font-size: 1.125rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--ink-dark);
-    }
-
-    .add-dish-btn {
-      padding: 9px 16px;
-      min-height: 38px;
-      border-radius: var(--radius-sm);
-      background: var(--terracotta);
-      color: var(--parchment);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      white-space: nowrap;
-      transition: background var(--t-fast) var(--ease-out);
-    }
-
-    .add-dish-btn:hover {
-      background: var(--terracotta-dark);
+      color: var(--text-white);
     }
 
     /* ============================================================
-       3. ABOUT US SECTION (#about) — Dark Espresso Split Story
+       4. GUEST REVIEWS — "What They Say?"
        ============================================================ */
-    .about-grid {
+    .reviews-section {
+      padding-block: 68px;
+    }
+
+    .reviews-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      gap: 64px;
-      align-items: center;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
     }
 
-    .about-visual {
-      position: relative;
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 22px;
+      padding: 24px;
     }
 
-    .about-frame {
-      aspect-ratio: 3 / 4;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(217, 138, 43, 0.25);
-    }
-
-    .about-story-note {
-      margin-top: 16px;
-      font-size: 0.875rem;
-      color: var(--ink-muted-dark);
+    .review-header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
-    }
-
-    .about-prose {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      color: var(--ink-muted-dark);
-      font-size: 1rem;
-      line-height: 1.72;
-    }
-
-    .about-metrics {
-      margin-top: 36px;
-      padding-top: 32px;
-      border-top: 1px solid var(--hairline-dark);
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .metric-block {
-      padding: 18px 20px;
-      border-radius: var(--radius-md);
-      background: var(--espresso-elevated);
-      border: 1px solid var(--hairline-dark);
-    }
-
-    .metric-value {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--saffron);
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
-
-    .metric-label {
-      font-size: 0.875rem;
-      color: var(--ink-light);
-      font-weight: 500;
-    }
-
-    /* ============================================================
-       4. SPECIAL SECTION (#special) — Chef Specials & Group Feast
-       ============================================================ */
-    .special-feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-      gap: 0;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: var(--charcoal);
-      color: var(--ink-light);
-      border: 1px solid rgba(20, 17, 15, 0.14);
-      margin-bottom: 28px;
-    }
-
-    .special-feature-media {
-      min-height: 360px;
-    }
-
-    .special-feature-body {
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .special-kicker {
-      font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--saffron);
-      margin-bottom: 10px;
-    }
-
-    .special-feature-title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.12;
       margin-bottom: 14px;
     }
 
-    .special-feature-copy {
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(232, 122, 36, 0.16);
+      border: 1px solid var(--border-warm);
+      color: var(--accent-bright);
+      font-family: var(--font-display);
+      font-weight: 700;
       font-size: 0.9375rem;
-      color: var(--ink-muted-dark);
-      line-height: 1.65;
-      margin-bottom: 24px;
-    }
-
-    .special-price-row {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding-top: 20px;
-      border-top: 1px solid var(--hairline-dark);
+      justify-content: center;
+      flex-shrink: 0;
     }
 
-    .special-price-big {
-      font-family: var(--font-serif);
-      font-size: 2rem;
+    .review-name {
+      font-size: 0.9375rem;
       font-weight: 700;
-      color: var(--saffron);
-    }
-
-    .special-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .special-card {
-      background: var(--sand-card);
-      border: 1px solid var(--hairline-light);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .special-card-media {
-      aspect-ratio: 4 / 3;
-    }
-
-    .special-card-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .special-card-meta {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--terracotta);
-      margin-bottom: 6px;
-    }
-
-    .special-card-title {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
+      color: var(--text-white);
       line-height: 1.2;
-      margin-bottom: 8px;
-      color: var(--ink-dark);
     }
 
-    .special-card-desc {
+    .review-stars {
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    .review-quote {
       font-size: 0.875rem;
-      color: var(--ink-muted-light);
+      color: var(--text-muted);
       line-height: 1.55;
-      margin-bottom: 18px;
-      flex: 1;
     }
 
     /* ============================================================
-       5. CONTACT & RESERVATIONS (#contact) — Two-Column Dark
+       5. ABOUT US (#about) — "Our Dum Kitchen" ("Meet Our Chefs" card)
        ============================================================ */
+    .about-section {
+      padding-block: 68px;
+    }
+
+    .about-feature-card {
+      max-width: 920px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 36px;
+      align-items: center;
+      padding: 28px 36px;
+      border-radius: 28px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+    }
+
+    .about-photo {
+      aspect-ratio: 4 / 3;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .about-copy h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .about-copy p {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .about-facts {
+      font-size: 0.8125rem;
+      color: var(--accent-bright);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    /* ============================================================
+       6. CONTACT & RESERVATIONS (#contact)
+       ============================================================ */
+    .contact-section {
+      padding-block: 68px;
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 48px;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
       align-items: start;
     }
 
-    .info-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+    .contact-info-card,
+    .reservation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 28px;
     }
 
-    .info-list {
-      display: grid;
-      gap: 18px;
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--espresso-elevated);
-      border: 1px solid var(--hairline-dark);
+    .info-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 20px;
     }
 
     .info-row {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
+      gap: 12px;
     }
 
     .info-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-sm);
-      background: rgba(217, 138, 43, 0.12);
-      color: var(--saffron);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: rgba(232, 122, 36, 0.14);
+      color: var(--accent-bright);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1122,41 +1093,37 @@
       margin-top: 2px;
     }
 
-    .info-row h3 {
+    .info-row strong {
+      display: block;
       font-size: 0.8125rem;
-      font-weight: 600;
-      color: var(--saffron);
-      margin-bottom: 4px;
+      color: var(--accent);
+      margin-bottom: 2px;
     }
 
     .info-row p,
     .info-row a {
-      font-size: 0.9375rem;
-      color: var(--ink-light);
-      line-height: 1.55;
+      font-size: 0.9rem;
+      color: var(--text-white);
+      line-height: 1.5;
     }
 
     .info-row a:hover {
-      color: var(--saffron);
-      text-decoration: underline;
+      color: var(--accent);
     }
 
-    .facility-highlights {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 20px;
-      padding-top: 12px;
-      border-top: 1px solid var(--hairline-dark);
-      font-size: 0.875rem;
-      color: var(--ink-muted-dark);
+    .facility-line {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 20px;
     }
 
     .map-frame-wrap {
-      border-radius: var(--radius-md);
+      height: 220px;
+      border-radius: 14px;
       overflow: hidden;
-      border: 1px solid var(--hairline-dark);
-      background: var(--charcoal);
-      height: 270px;
+      border: 1px solid var(--border-subtle);
     }
 
     .map-frame-wrap iframe {
@@ -1166,39 +1133,23 @@
       display: block;
     }
 
-    /* Reservation Form Card */
-    .reservation-card {
-      padding: 32px;
-      border-radius: var(--radius-lg);
-      background: var(--parchment);
-      color: var(--ink-dark);
-      border: 1px solid var(--hairline-light);
-    }
-
     .reservation-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.9rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
       font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 6px;
-    }
-
-    .reservation-card > p {
-      font-size: 0.9375rem;
-      color: var(--ink-muted-light);
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
     .form-field {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
 
     .form-field.is-full {
@@ -1208,7 +1159,7 @@
     .form-field label {
       font-size: 0.8125rem;
       font-weight: 600;
-      color: var(--ink-dark);
+      color: var(--text-muted);
     }
 
     .form-field input,
@@ -1217,64 +1168,45 @@
       width: 100%;
       padding: 11px 14px;
       min-height: 44px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(20, 17, 15, 0.22);
-      background: #FFFFFF;
-      color: var(--ink-dark);
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-white);
       font-size: 0.9375rem;
-      transition: border-color var(--t-fast);
+    }
+
+    .form-field select option {
+      background: #1A1714;
+      color: var(--text-white);
     }
 
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
       outline: none;
-      border-color: var(--terracotta);
+      border-color: var(--accent);
     }
 
     .field-error {
       font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--terracotta-dark);
-      min-height: 16px;
+      color: #F8835B;
+      min-height: 15px;
     }
 
     .form-actions {
       grid-column: 1 / -1;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 6px;
-    }
-
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 20px;
-      min-height: 46px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(20, 17, 15, 0.22);
-      background: transparent;
-      color: var(--ink-dark);
-      font-weight: 600;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      transition: background var(--t-fast), border-color var(--t-fast);
-    }
-
-    .whatsapp-btn:hover {
-      background: var(--sand);
-      border-color: var(--ink-dark);
+      gap: 10px;
+      margin-top: 4px;
     }
 
     .reservation-confirmation {
       display: none;
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--sand);
-      border: 1px solid rgba(46, 125, 50, 0.35);
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(56, 161, 105, 0.45);
+      background: rgba(56, 161, 105, 0.08);
     }
 
     .reservation-confirmation.is-visible {
@@ -1282,31 +1214,128 @@
     }
 
     .reservation-confirmation h4 {
-      font-family: var(--font-serif);
-      font-size: 1.55rem;
-      font-weight: 700;
-      color: #1B5E20;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: #7AE5A4;
       margin-bottom: 8px;
     }
 
     .reservation-summary {
-      font-size: 0.9375rem;
-      color: var(--ink-dark);
-      line-height: 1.6;
-      margin-bottom: 18px;
+      font-size: 0.9rem;
+      color: var(--text-white);
+      line-height: 1.55;
+      margin-bottom: 16px;
     }
 
     /* ============================================================
-       ORDER BAG SLIDE-OVER DRAWER
+       FOOTER — Exact 4-Column Reference Layout
+       ============================================================ */
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-block: 52px 28px;
+      background: var(--bg-obsidian);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.9fr 1.2fr;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .footer-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      max-width: 30ch;
+      margin-bottom: 16px;
+    }
+
+    .footer-icon-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .footer-sq-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 7px;
+      background: var(--text-white);
+      color: var(--accent-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 160ms, color 160ms;
+    }
+
+    .footer-sq-icon:hover {
+      background: var(--accent);
+      color: var(--text-white);
+    }
+
+    .footer-col h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-callback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-callback-form input {
+      padding: 10px 12px;
+      min-height: 42px;
+      border-radius: 7px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-white);
+      font-size: 0.875rem;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       ORDER BAG SLIDE-OVER DRAWER (Dark Obsidian Theme Match)
        ============================================================ */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
       z-index: 250;
-      background: rgba(14, 11, 10, 0.68);
+      background: rgba(0, 0, 0, 0.72);
       opacity: 0;
       pointer-events: none;
-      transition: opacity var(--t-fast) var(--ease-out);
+      transition: opacity 180ms var(--ease);
     }
 
     .drawer-backdrop.is-open {
@@ -1320,16 +1349,17 @@
       right: 0;
       bottom: 0;
       z-index: 260;
-      width: min(440px, 100vw);
-      background: var(--parchment);
-      color: var(--ink-dark);
+      width: min(420px, 100vw);
+      background: #141210;
+      border-left: 1px solid var(--border-subtle);
+      color: var(--text-white);
       display: flex;
       flex-direction: column;
       visibility: hidden;
       pointer-events: none;
       transform: translateX(100%);
-      transition: transform 240ms var(--ease-out), visibility 240ms;
-      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.35);
+      transition: transform 240ms var(--ease), visibility 240ms;
+      overscroll-behavior: contain;
     }
 
     .bag-drawer.is-open {
@@ -1339,49 +1369,47 @@
     }
 
     .bag-drawer-header {
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--hairline-light);
+      padding: 20px 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .bag-drawer-header h2 {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
       font-weight: 700;
     }
 
     .bag-close-btn {
       width: 40px;
       height: 40px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--hairline-light);
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: var(--ink-dark);
     }
 
     .bag-drawer-body {
       flex: 1;
       overflow-y: auto;
-      padding: 20px 24px;
+      padding: 20px 22px;
     }
 
     .bag-empty {
-      padding: 48px 16px;
+      padding: 40px 12px;
       text-align: center;
-      color: var(--ink-muted-light);
+      color: var(--text-muted);
     }
 
     .bag-empty strong {
       display: block;
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      color: var(--ink-dark);
-      margin-bottom: 8px;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--text-white);
+      margin-bottom: 6px;
     }
 
     .bag-list {
@@ -1396,60 +1424,50 @@
       justify-content: space-between;
       gap: 12px;
       padding-bottom: 14px;
-      border-bottom: 1px solid var(--hairline-light);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .bag-item-info h4 {
       font-size: 0.9375rem;
       font-weight: 600;
-      color: var(--ink-dark);
     }
 
     .bag-item-info span {
       font-size: 0.8125rem;
-      color: var(--ink-muted-light);
+      color: var(--text-muted);
     }
 
     .qty-stepper {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      border: 1px solid var(--hairline-light);
-      border-radius: var(--radius-sm);
+      gap: 6px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
       padding: 3px 6px;
-      background: #FFFFFF;
+      background: rgba(255, 255, 255, 0.04);
     }
 
     .qty-btn {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      color: var(--ink-dark);
-      border-radius: 4px;
     }
 
     .qty-btn:hover {
-      background: var(--sand);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .bag-drawer-footer {
-      padding: 20px 24px;
-      border-top: 1px solid var(--hairline-light);
-      background: var(--sand);
+      padding: 18px 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #1A1714;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-    }
-
-    .bag-total-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 1.0625rem;
-      font-weight: 700;
+      gap: 10px;
     }
 
     .bag-mode-row {
@@ -1459,104 +1477,62 @@
     }
 
     .bag-mode-btn {
-      padding: 8px 12px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--hairline-light);
-      background: #FFFFFF;
+      padding: 9px 12px;
+      min-height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
       font-size: 0.8125rem;
       font-weight: 600;
-      color: var(--ink-muted-light);
+      color: var(--text-muted);
     }
 
     .bag-mode-btn.is-active {
-      background: var(--charcoal);
-      color: var(--parchment);
-      border-color: var(--charcoal);
+      background: var(--text-white);
+      color: var(--text-dark);
+      border-color: var(--text-white);
+    }
+
+    .bag-total-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1rem;
+      font-weight: 700;
     }
 
     .bag-order-success {
       display: none;
-      padding: 18px;
-      border-radius: var(--radius-md);
-      background: #FFFFFF;
-      border: 1px solid rgba(46, 125, 50, 0.35);
-      font-size: 0.9rem;
-      line-height: 1.55;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(56, 161, 105, 0.45);
+      background: rgba(56, 161, 105, 0.1);
+      font-size: 0.875rem;
+      line-height: 1.5;
     }
 
     .bag-order-success.is-visible {
       display: block;
     }
 
-    /* ============================================================
-       FOOTER
-       ============================================================ */
-    .site-footer {
-      background: var(--charcoal);
-      color: var(--ink-muted-dark);
-      padding-block: 48px 32px;
-      border-top: 1px solid var(--hairline-dark);
-    }
-
-    .footer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--hairline-dark);
-    }
-
-    .footer-brand {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--ink-light);
-    }
-
-    .footer-brand span {
-      color: var(--saffron);
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      font-size: 0.875rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--saffron);
-    }
-
-    .footer-bottom {
-      padding-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 0.8125rem;
-    }
-
-    /* Toast feedback */
+    /* Toast */
     .toast {
       position: fixed;
-      right: 24px;
+      left: 24px;
       bottom: 24px;
       z-index: 300;
       transform: translateY(16px);
-      background: var(--espresso-elevated);
-      color: var(--parchment);
-      border: 1px solid rgba(217, 138, 43, 0.45);
+      background: #1F1B18;
+      color: var(--text-white);
+      border: 1px solid var(--border-warm);
       padding: 12px 18px;
-      border-radius: var(--radius-sm);
+      border-radius: 8px;
       font-size: 0.875rem;
       font-weight: 500;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+      transition: opacity 200ms var(--ease), transform 200ms var(--ease);
     }
 
     .toast.is-visible {
@@ -1565,47 +1541,31 @@
     }
 
     /* ============================================================
-       SCROLL REVEAL ANIMATION
-       ============================================================ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity var(--t-med) var(--ease-out), transform var(--t-med) var(--ease-out);
-    }
-
-    .reveal.is-revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
-    }
-
-    /* ============================================================
        RESPONSIVE BREAKPOINTS (1024px, 768px, 480px)
        ============================================================ */
     @media (max-width: 1024px) {
       .hero-grid,
-      .about-grid,
       .contact-grid,
-      .special-feature {
+      .about-feature-card {
         grid-template-columns: 1fr;
       }
 
       .menu-grid,
-      .special-cards-grid {
+      .reviews-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .trust-strip {
+      .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .about-frame {
-        aspect-ratio: 4 / 3;
+      .ticket-banner {
+        transform: none;
+        padding: 22px 24px;
+      }
+
+      .ticket-plate {
+        display: none;
       }
     }
 
@@ -1621,28 +1581,74 @@
       .bag-trigger {
         min-height: 44px;
         min-width: 44px;
-        padding: 9px 14px;
       }
 
-      .section-light,
-      .section-sand,
-      .section-dark {
-        padding-block: 56px;
+      .hero-section {
+        padding-top: calc(var(--header-h) + 22px);
+        padding-bottom: 40px;
       }
 
-      .section-header-split {
+      .hero-grid {
+        gap: 24px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.1rem, 8.5vw, 2.75rem);
+      }
+
+      .hero-bowl-circle {
+        width: min(300px, 84vw);
+      }
+
+      .ticket-banner-wrap {
+        margin-top: 28px;
+      }
+
+      .ticket-banner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
+        padding: 22px;
+      }
+
+      .ticket-banner::before,
+      .ticket-banner::after {
+        display: none;
+      }
+
+      .ticket-right {
+        padding-left: 0;
+        text-align: left;
+      }
+
+      .specials-section,
+      .menu-section,
+      .reviews-section,
+      .about-section,
+      .contact-section {
+        padding-block: 48px;
+      }
+
+      .bracket-heading-wrap {
         margin-bottom: 28px;
+      }
+
+      .special-row-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px;
+      }
+
+      .special-row-card.is-reversed .special-row-media {
+        order: 0;
+      }
+
+      .special-row-media {
+        width: 190px;
       }
 
       .menu-controls {
         flex-direction: column;
         align-items: stretch;
-        gap: 12px;
-        padding-bottom: 18px;
-        margin-bottom: 24px;
       }
 
       .menu-tabs {
@@ -1658,176 +1664,38 @@
         display: none;
       }
 
-      .menu-tab {
+      .menu-tab,
+      .veg-filter-toggle {
         min-height: 44px;
-        padding: 10px 16px;
-        scroll-snap-align: start;
       }
 
       .veg-filter-toggle {
         align-self: flex-start;
-        min-height: 44px;
-        padding: 10px 16px;
       }
 
       .menu-grid,
-      .special-cards-grid {
+      .reviews-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
       }
 
       .portion-btn {
         min-height: 42px;
-        padding: 8px 10px;
-        font-size: 0.8125rem;
-      }
-
-      .add-dish-btn {
-        min-height: 44px;
-        padding: 10px 18px;
-        font-size: 0.875rem;
-      }
-
-      .hero-section {
-        padding-top: calc(var(--header-h) + 20px);
-        padding-bottom: 36px;
-      }
-
-      .hero-grid {
-        gap: 22px;
-      }
-
-      .hero-copy {
-        padding-block: 0;
-      }
-
-      .editorial-kicker {
-        font-size: 0.75rem;
-        margin-bottom: 10px;
-      }
-
-      .hero-title {
-        font-size: clamp(2.1rem, 8.2vw, 2.85rem);
-        margin-bottom: 12px;
-      }
-
-      .hero-subtitle {
-        font-size: 0.95rem;
-        line-height: 1.55;
-        margin-bottom: 18px;
-      }
-
-      .hero-cta-row {
-        gap: 10px;
-        margin-bottom: 18px;
-      }
-
-      .hero-cta-row .btn-primary,
-      .hero-cta-row .btn-secondary-dark {
-        flex: 1 1 150px;
-        padding: 12px 16px;
-      }
-
-      .hero-meta-strip {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 10px;
-        padding-top: 14px;
-      }
-
-      .hero-meta-item strong {
-        font-size: 0.8125rem;
-      }
-
-      .hero-meta-item span {
-        font-size: 0.75rem;
-        line-height: 1.35;
-      }
-
-      .hero-image-card {
-        min-height: 220px;
-        aspect-ratio: 16 / 11;
-      }
-
-      .hero-caption-bar {
-        left: 16px;
-        right: 16px;
-        bottom: 14px;
-      }
-
-      .hero-caption-title {
-        font-size: 1.2rem;
-      }
-
-      .trust-strip {
-        margin-top: 28px;
-        padding-top: 20px;
-        gap: 16px;
-      }
-
-      .about-grid {
-        gap: 32px;
-      }
-
-      .about-metrics {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 24px;
-        padding-top: 24px;
-      }
-
-      .metric-block {
-        padding: 14px;
-      }
-
-      .metric-value {
-        font-size: 1.35rem;
-      }
-
-      .metric-label {
-        font-size: 0.8125rem;
-      }
-
-      .special-feature-media {
-        min-height: 210px;
-        aspect-ratio: 16 / 10;
-      }
-
-      .special-feature-body,
-      .reservation-card {
-        padding: 22px;
-      }
-
-      .special-price-row {
-        flex-wrap: wrap;
-      }
-
-      .contact-grid {
-        gap: 28px;
-      }
-
-      .info-list {
-        padding: 18px;
-        gap: 14px;
-      }
-
-      .map-frame-wrap {
-        height: 220px;
       }
 
       .form-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
       }
 
       .form-field input,
       .form-field select,
-      .form-field textarea {
+      .form-field textarea,
+      .footer-callback-form input {
         font-size: 1rem;
       }
 
       .bag-drawer {
         width: 100vw;
-        overscroll-behavior: contain;
       }
 
       .bag-close-btn {
@@ -1845,20 +1713,11 @@
       }
 
       .bag-drawer-footer {
-        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        padding-bottom: max(18px, env(safe-area-inset-bottom));
       }
 
       .mobile-drawer {
-        overscroll-behavior: contain;
         padding-bottom: max(24px, env(safe-area-inset-bottom));
-      }
-
-      .mobile-nav-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 54px;
-        font-size: 1.7rem;
       }
     }
 
@@ -1872,39 +1731,15 @@
         padding-inline: 16px;
       }
 
-      .section-light,
-      .section-sand,
-      .section-dark {
-        padding-block: 44px;
-      }
-
-      .hero-meta-strip {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-meta-strip .hero-meta-item:last-child {
-        grid-column: 1 / -1;
-      }
-
-      .trust-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .bag-trigger span.bag-label {
+      .bag-trigger .bag-label {
         display: none;
       }
 
-      .special-price-row .btn-primary {
-        width: 100%;
-      }
-
-      .form-actions .btn-primary,
-      .form-actions .whatsapp-btn {
+      .hero-actions .btn-orange,
+      .hero-actions .btn-ghost,
+      .form-actions .btn-orange,
+      .form-actions .btn-ghost {
         flex: 1 1 100%;
-      }
-
-      .footer-links {
-        gap: 14px 20px;
       }
 
       .toast {
@@ -1917,7 +1752,7 @@
   </style>
 </head>
 <body>
-  <!-- Sticky Glassmorphic Top Navigation Bar -->
+  <!-- Sticky Top Bar -->
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="#home" class="brand-wordmark">The <span>BiryaniWalla</span></a>
@@ -1937,7 +1772,7 @@
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <path d="M16 10a4 4 0 0 1-8 0"></path>
           </svg>
-          <span class="bag-label">Order Bag</span>
+          <span class="bag-label">Order <span>Bag</span></span>
           <span class="bag-count tabular" id="header-bag-count">0</span>
         </button>
 
@@ -1973,141 +1808,155 @@
     </nav>
 
     <div class="mobile-drawer-meta">
-      NH-49, Kali Mandir Rd, beside ICICI Bank, Purani Basti, Jharsuguda, Odisha 768202<br />
-      <a href="tel:+917008470870" style="color: var(--saffron); font-weight: 600; display: inline-block; padding-block: 8px;">Call +91 70084 70870</a> · Lunch 11:30 AM – 3:00 PM · Dinner 6:00 PM – 10:00 PM
+      NH-49, Kali Mandir Rd, beside ICICI Bank, Purani Basti, Jharsuguda<br />
+      <a href="tel:+917008470870" style="color: var(--accent); font-weight: 600; display: inline-block; padding-block: 8px;">Call +91 70084 70870</a> · Open Daily
     </div>
   </div>
 
   <main>
-    <!-- 1. HOME SECTION (#home) -->
+    <!-- 1. HERO SECTION (#home) -->
     <section id="home" class="hero-section">
       <div class="container">
         <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="editorial-kicker">Purani Basti, Jharsuguda · NH-49 Kali Mandir Rd</p>
+          <div>
             <h1 class="hero-title">
-              Royal <em>Dum Biryani</em>, Authentic Mandi &amp; Slow-Cooked Spices
+              Experience the<br />
+              Royal <span class="hero-taste-word">Taste</span>
+              <span class="hero-inline-avatars" aria-hidden="true">
+                <img src="/src/assets/images/hero_biryani_handi_1794886710197.jpg" alt="" referrerpolicy="no-referrer" />
+                <img src="/src/assets/images/platter_chicken_mandi_1794886679321.jpg" alt="" referrerpolicy="no-referrer" />
+                <img src="/src/assets/images/platter_mutton_mandi_1794886671463.jpg" alt="" referrerpolicy="no-referrer" />
+              </span>
+              of<br />
+              Dum &amp; Mandi
             </h1>
             <p class="hero-subtitle">
-              Aged long-grain basmati sealed in clay handis over gentle embers, alongside smoky Arabian Chicken &amp; Mutton Mandi platters crafted fresh for lunch and dinner in Jharsuguda.
+              Slow-cooked Dum Biryani &amp; smoky Arabian Mandi platters crafted fresh daily in Purani Basti, Jharsuguda.
             </p>
-            <div class="hero-cta-row">
-              <a href="#menu" class="btn-primary">
-                Explore Menu
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#contact" class="btn-secondary-dark">Reserve a Table</a>
-            </div>
-
-            <div class="hero-meta-strip">
-              <div class="hero-meta-item">
-                <strong>Freshly Sealed Dum</strong>
-                <span>Prepared daily in copper &amp; clay pots</span>
-              </div>
-              <div class="hero-meta-item">
-                <strong>Dine-In &amp; Takeout</strong>
-                <span>Family seating &amp; packed handis</span>
-              </div>
-              <div class="hero-meta-item">
-                <strong>Open Daily</strong>
-                <span>11:30 AM – 3:00 PM · 6:00 – 10:00 PM</span>
-              </div>
+            <div class="hero-actions">
+              <a href="#menu" class="btn-orange">Explore Menu</a>
+              <a href="#contact" class="btn-ghost">Reserve a Table</a>
             </div>
           </div>
 
-          <div class="hero-visual">
-            <div class="media-frame hero-image-card">
+          <div class="hero-bowl-wrap">
+            <div class="media-frame hero-bowl-circle">
               <img
                 src="/src/assets/images/hero_biryani_handi_1794886710197.jpg"
-                alt="Steaming saffron Hyderabadi Chicken Dum Biryani in a clay handi with burani raita"
+                alt="Steaming Hyderabadi Dum Biryani in clay handi"
                 referrerpolicy="no-referrer"
                 onerror="this.parentElement.classList.add('is-broken')"
               />
-              <div class="media-fallback">
-                <span>Hyderabadi Dum Biryani Handi</span>
-              </div>
-              <div class="hero-image-scrim"></div>
-              <div class="hero-caption-bar">
-                <div>
-                  <div class="hero-caption-title">Hyderabadi Chicken Dum Handi</div>
-                  <div class="hero-caption-sub">Saffron basmati · Crisp birista · Burani raita</div>
-                </div>
-                <div class="hero-caption-price tabular">₹220</div>
-              </div>
+              <div class="media-fallback"><span>Dum Biryani Handi</span></div>
             </div>
           </div>
         </div>
 
-        <div class="trust-strip" aria-label="Dining highlights">
-          <div class="trust-cell">
-            <div class="trust-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path>
-                <path d="M7 2v20"></path>
-                <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path>
-              </svg>
+        <!-- Reference Tilted Notched Ticket Card -->
+        <div class="ticket-banner-wrap">
+          <div class="ticket-banner">
+            <div class="ticket-left">
+              <h2>Authentic Mandi &amp; Dum Handis<br />Made Fresh Every Day</h2>
+              <div class="ticket-mini-row">
+                <div class="ticket-mini-avatars" aria-hidden="true">
+                  <img src="/src/assets/images/platter_chicken_mandi_1794886679321.jpg" alt="" referrerpolicy="no-referrer" />
+                  <img src="/src/assets/images/platter_mutton_mandi_1794886671463.jpg" alt="" referrerpolicy="no-referrer" />
+                  <img src="/src/assets/images/tandoor_kebabs_starters_1794886700520.jpg" alt="" referrerpolicy="no-referrer" />
+                  <span class="ticket-mini-badge">24+</span>
+                </div>
+                <span class="ticket-mini-caption">Dine-in · Takeout · Free Parking</span>
+              </div>
             </div>
-            <div class="trust-text">
-              <strong>Dine-in &amp; Takeout</strong>
-              <span>Warm table service &amp; quick takeaway</span>
+
+            <div class="ticket-right">
+              <div class="ticket-big tabular">₹209+</div>
+              <div class="ticket-sub">Lunch 11:30–3:00 · Dinner 6:00–10:00</div>
             </div>
-          </div>
-          <div class="trust-cell">
-            <div class="trust-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <div class="trust-text">
-              <strong>Family &amp; Group Dining</strong>
-              <span>Spacious Chowki &amp; Mandi sharing platters</span>
-            </div>
-          </div>
-          <div class="trust-cell">
-            <div class="trust-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
-                <path d="M9 17V7h4a3 3 0 0 1 0 6H9"></path>
-              </svg>
-            </div>
-            <div class="trust-text">
-              <strong>Free Parking</strong>
-              <span>Convenient roadside parking beside ICICI Bank</span>
-            </div>
-          </div>
-          <div class="trust-cell">
-            <div class="trust-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                <line x1="1" y1="10" x2="23" y2="10"></line>
-              </svg>
-            </div>
-            <div class="trust-text">
-              <strong>UPI &amp; Cards Accepted</strong>
-              <span>Cash, UPI QR, debit &amp; credit cards</span>
+
+            <div class="media-frame ticket-plate" aria-hidden="true">
+              <img src="/src/assets/images/platter_chicken_mandi_1794886679321.jpg" alt="" referrerpolicy="no-referrer" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. MENU SECTION (#menu) -->
-    <section id="menu" class="section-light">
+    <!-- 2. SPECIAL SECTION (#special) — Reference "Our Best Delivered" -->
+    <section id="special" class="specials-section">
+      <div class="media-frame specials-ambient-plate" aria-hidden="true">
+        <img src="/src/assets/images/special_chowki_feast_1794886716918.jpg" alt="" referrerpolicy="no-referrer" />
+      </div>
+
       <div class="container">
-        <div class="section-header-split">
-          <div>
-            <p class="editorial-kicker" style="color: var(--terracotta);">Kitchen Menu · ₹200–400 per person</p>
-            <h2 class="section-title">Crafted in Handi &amp; Tandoor</h2>
-          </div>
-          <p class="section-lead">
-            Choose from aromatic Hyderabadi Dum Biryanis, single-to-full sharing Mandi platters, charcoal starters, and traditional accompaniments. Add items to build a quick dine-in or takeout bag.
-          </p>
+        <div class="bracket-heading-wrap">
+          <h2 class="bracket-heading">Our Best <span>Specials</span></h2>
+        </div>
+
+        <div class="specials-stack">
+          <article class="special-row-card">
+            <div class="media-frame special-row-media">
+              <img
+                src="/src/assets/images/special_chowki_feast_1794886716918.jpg"
+                alt="Special Chowki Mandi Platter"
+                referrerpolicy="no-referrer"
+                onerror="this.parentElement.classList.add('is-broken')"
+              />
+              <div class="media-fallback"><span>Special Chowki Mandi</span></div>
+            </div>
+
+            <div class="special-row-info">
+              <h3>Special Chowki Mandi</h3>
+              <p>Serves 4–6 · Saffron mandi rice with Chicken Alfaham, Mutton Fry, Fish Fry, raita &amp; salan.</p>
+              <div class="special-row-price tabular">₹1,599/-</div>
+              <div class="special-row-actions">
+                <button type="button" class="btn-orange order-special-btn" data-special-id="special-chowki-mandi">Order Now</button>
+                <button type="button" class="icon-bag-btn order-special-btn" data-special-id="special-chowki-mandi" aria-label="Add Special Chowki Mandi to bag">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="special-row-card is-reversed">
+            <div class="media-frame special-row-media">
+              <img
+                src="/src/assets/images/platter_mutton_mandi_1794886671463.jpg"
+                alt="Special Mix Mandi Half Platter"
+                referrerpolicy="no-referrer"
+                onerror="this.parentElement.classList.add('is-broken')"
+              />
+              <div class="media-fallback"><span>Special Mix Mandi</span></div>
+            </div>
+
+            <div class="special-row-info">
+              <h3>Special Mix Mandi (Half)</h3>
+              <p>Serves 2–3 · Tender Mutton Fry and smoky Chicken Alfaham over spiced mandi rice.</p>
+              <div class="special-row-price tabular">₹849/-</div>
+              <div class="special-row-actions">
+                <button type="button" class="btn-orange order-special-btn" data-special-id="special-mix-mandi">Order Now</button>
+                <button type="button" class="icon-bag-btn order-special-btn" data-special-id="special-mix-mandi" aria-label="Add Special Mix Mandi to bag">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MENU SECTION (#menu) — Reference 3x2 Dark Cards -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <div class="bracket-heading-wrap">
+          <h2 class="bracket-heading">Explore Our <span>Menu</span></h2>
         </div>
 
         <div class="menu-controls">
@@ -2121,261 +1970,147 @@
 
           <button type="button" class="veg-filter-toggle" id="veg-only-toggle" aria-pressed="false">
             <span class="diet-mark is-veg" aria-hidden="true"></span>
-            <span>Pure Veg Only</span>
+            <span>Veg Only</span>
           </button>
         </div>
 
         <div class="menu-grid" id="menu-grid" aria-live="polite">
-          <!-- Menu cards rendered by Vanilla JS -->
+          <!-- Rendered by Vanilla JS -->
         </div>
       </div>
     </section>
 
-    <!-- 3. ABOUT US SECTION (#about) -->
-    <section id="about" class="section-dark">
+    <!-- 4. GUEST REVIEWS — Reference "What They Say?" -->
+    <section class="reviews-section" aria-label="Guest reviews">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-visual reveal">
-            <div class="media-frame about-frame">
-              <img
-                src="/src/assets/images/about_dum_spices_1794886671202.jpg"
-                alt="Traditional dough-sealed copper handi and whole aromatic spices in brass bowls"
-                referrerpolicy="no-referrer"
-                onerror="this.parentElement.classList.add('is-broken')"
-              />
-              <div class="media-fallback">
-                <span>Traditional Dum Pukht Kitchen</span>
-              </div>
-            </div>
-            <div class="about-story-note">
-              <span>Purani Basti Kitchen · Jharsuguda</span>
-              <span>Dough-Sealed Copper Deg</span>
-            </div>
-          </div>
+        <div class="bracket-heading-wrap">
+          <h2 class="bracket-heading">What They <span>Say?</span></h2>
+        </div>
 
-          <div class="reveal">
-            <p class="editorial-kicker">Our Craft &amp; Hospitality</p>
-            <h2 class="section-title">Patience Sealed in Dough, Fragrant With Whole Spices</h2>
-            <div class="about-prose">
-              <p>
-                At The BiryaniWalla, every handi begins long before the doors open for lunch. We parboil aged long-grain basmati rice with green cardamom, shahi jeera, bay leaf, and saffron milk, then layer it over tender marinated cuts inside heavy pots sealed tight with wheat dough.
-              </p>
-              <p>
-                Alongside our classic Dum Biryanis, our kitchen celebrates authentic Arabian and Hyderabadi Mandi—smoky charcoal-kissed Alfaham, Juicy Chicken, Afghani Mutton, and Ghee Roast platters served generously for solo diners, families, and celebratory groups in Purani Basti, Jharsuguda.
-              </p>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">RA</div>
+              <div>
+                <div class="review-name">Rohit Agrawal</div>
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              </div>
             </div>
+            <p class="review-quote">
+              Best Mutton Ghee Roast Mandi in Jharsuguda. Huge portions and authentic smoky aroma every time.
+            </p>
+          </article>
 
-            <div class="about-metrics">
-              <div class="metric-block">
-                <div class="metric-value tabular">24+</div>
-                <div class="metric-label">Whole Roasted &amp; Hand-Ground Spices</div>
-              </div>
-              <div class="metric-block">
-                <div class="metric-value">Slow Dum</div>
-                <div class="metric-label">Dough-Sealed Embers Cooking</div>
-              </div>
-              <div class="metric-block">
-                <div class="metric-value">Group Seating</div>
-                <div class="metric-label">Warm Family &amp; Mandi Tables</div>
-              </div>
-              <div class="metric-block">
-                <div class="metric-value">Free Parking</div>
-                <div class="metric-label">Easy Access on NH-49 Kali Mandir Rd</div>
+          <article class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">PM</div>
+              <div>
+                <div class="review-name">Priya Mohanty</div>
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
               </div>
             </div>
-          </div>
+            <p class="review-quote">
+              Ordered the Special Chowki Mandi for our family dinner—everyone loved the Chicken Alfaham &amp; saffron rice.
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-header">
+              <div class="review-avatar">AB</div>
+              <div>
+                <div class="review-name">Arjun Behera</div>
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-quote">
+              Clean family seating right on NH-49 with easy parking and quick takeout service.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 4. SPECIAL SECTION (#special) -->
-    <section id="special" class="section-sand">
+    <!-- 5. ABOUT US SECTION (#about) — Reference "Meet Our Chefs" Card -->
+    <section id="about" class="about-section">
       <div class="container">
-        <div class="section-header-split">
-          <div>
-            <p class="editorial-kicker" style="color: var(--terracotta);">Chef Specials &amp; Sharing Feasts</p>
-            <h2 class="section-title">Signature Mandi Platters &amp; Royal Packs</h2>
-          </div>
-          <p class="section-lead">
-            Designed for family dinners and weekend gatherings—grand sharing platters combining slow-cooked meats, smoky tandoor cuts, and fragrant saffron rice.
-          </p>
+        <div class="bracket-heading-wrap">
+          <h2 class="bracket-heading">About <span>Us</span></h2>
         </div>
 
-        <article class="special-feature reveal">
-          <div class="media-frame special-feature-media">
+        <div class="about-feature-card">
+          <div class="media-frame about-photo">
             <img
-              src="/src/assets/images/special_chowki_feast_1794886716918.jpg"
-              alt="Royal Special Chowki Mandi platter loaded with roasted chicken, mutton fry, fish fry, and saffron mandi rice"
+              src="/src/assets/images/about_dum_spices_1794886671202.jpg"
+              alt="Dough-sealed copper handi and whole aromatic spices"
               referrerpolicy="no-referrer"
               onerror="this.parentElement.classList.add('is-broken')"
             />
-            <div class="media-fallback">
-              <span>Special Chowki Mandi Feast</span>
-            </div>
+            <div class="media-fallback"><span>The BiryaniWalla Kitchen</span></div>
           </div>
 
-          <div class="special-feature-body">
-            <p class="special-kicker">House Ceremonial Feast · Serves 4–6 Guests</p>
-            <h3 class="special-feature-title">Special Chowki Mandi Platter</h3>
-            <p class="special-feature-copy">
-              Our showpiece group platter: a generous bed of saffron-infused Mandi rice topped with Chicken Alfaham, Mutton Fry, crispy Chicken 65, Fish Fry, roasted cashews, fried onions, Afghani gravy, burani raita, and spicy tomato chutney.
+          <div class="about-copy">
+            <h3>Crafted Over Gentle Embers</h3>
+            <p>
+              Every handi at The BiryaniWalla is layered with aged basmati rice, 24+ whole hand-ground spices, and tender cuts sealed tight in wheat dough—paired with smoky Arabian Mandi platters for families and groups in Purani Basti, Jharsuguda.
             </p>
-            <div class="special-price-row">
-              <div>
-                <div class="special-price-big tabular">₹1,599</div>
-                <div style="font-size: 0.8125rem; color: var(--ink-muted-dark);">Ideal for family &amp; group celebrations</div>
-              </div>
-              <button
-                type="button"
-                class="btn-primary order-special-btn"
-                data-special-id="special-chowki-mandi"
-              >
-                Order Special
-              </button>
-            </div>
+            <div class="about-facts">Dine-In &amp; Takeout · Family Seating · Free Parking · UPI &amp; Cards</div>
+            <a href="#contact" class="btn-orange">Reserve a Table</a>
           </div>
-        </article>
-
-        <div class="special-cards-grid reveal">
-          <article class="special-card">
-            <div class="media-frame special-card-media">
-              <img
-                src="/src/assets/images/platter_chicken_mandi_1794886679321.jpg"
-                alt="Special Mix Mandi platter with chicken and mutton cuts over saffron rice"
-                referrerpolicy="no-referrer"
-                onerror="this.parentElement.classList.add('is-broken')"
-              />
-              <div class="media-fallback"><span>Special Mix Mandi</span></div>
-            </div>
-            <div class="special-card-body">
-              <p class="special-card-meta">Chef Combo · Serves 2–3</p>
-              <h3 class="special-card-title">Special Mix Mandi (Half)</h3>
-              <p class="special-card-desc">
-                A balanced pairing of tender Mutton Fry and smoky Chicken Alfaham over aromatic mandi rice with toasted nuts and signature dips.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price tabular">₹849</span>
-                <button type="button" class="add-dish-btn order-special-btn" data-special-id="special-mix-mandi">Order Special</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="special-card">
-            <div class="media-frame special-card-media">
-              <img
-                src="/src/assets/images/platter_mutton_mandi_1794886671463.jpg"
-                alt="Mutton Madfoon and Juffian Mandi with slow-cooked spiced mutton"
-                referrerpolicy="no-referrer"
-                onerror="this.parentElement.classList.add('is-broken')"
-              />
-              <div class="media-fallback"><span>Weekend Mutton Special</span></div>
-            </div>
-            <div class="special-card-body">
-              <p class="special-card-meta">Weekend Dum Special · Serves 2 / 4</p>
-              <h3 class="special-card-title">Mutton Madfoon Mandi (Half)</h3>
-              <p class="special-card-desc">
-                Slow-braised bone-in mutton wrapped in aromatic herbs and steamed beneath spiced basmati for melt-in-the-mouth richness.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price tabular">₹599</span>
-                <button type="button" class="add-dish-btn order-special-btn" data-special-id="mutton-madfoon-half">Order Special</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="special-card">
-            <div class="media-frame special-card-media">
-              <img
-                src="/src/assets/images/hero_biryani_handi_1794886710197.jpg"
-                alt="Royal Handi Family Pack Hyderabadi Dum Biryani"
-                referrerpolicy="no-referrer"
-                onerror="this.parentElement.classList.add('is-broken')"
-              />
-              <div class="media-fallback"><span>Royal Handi Family Pack</span></div>
-            </div>
-            <div class="special-card-body">
-              <p class="special-card-meta">Takeout &amp; Dine-In · Serves 4</p>
-              <h3 class="special-card-title">Royal Chicken Dum Family Pack</h3>
-              <p class="special-card-desc">
-                Generous family-sized handi of Hyderabadi Chicken Dum Biryani packed with 4 boiled eggs, mirchi ka salan, and burani raita.
-              </p>
-              <div class="dish-footer">
-                <span class="dish-price tabular">₹799</span>
-                <button type="button" class="add-dish-btn order-special-btn" data-special-id="royal-handi-family">Order Special</button>
-              </div>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- 5. CONTACT & RESERVATIONS SECTION (#contact) -->
-    <section id="contact" class="section-dark">
+    <!-- 6. CONTACT & RESERVATIONS (#contact) -->
+    <section id="contact" class="contact-section">
       <div class="container">
-        <div class="section-header-split">
-          <div>
-            <p class="editorial-kicker">Visit or Reserve in Jharsuguda</p>
-            <h2 class="section-title">Find Us in Purani Basti</h2>
-          </div>
-          <p class="section-lead">
-            Walk in for lunch or dinner, reserve a family table ahead of peak weekend hours, or pre-order your handi for smooth takeout pickup.
-          </p>
+        <div class="bracket-heading-wrap">
+          <h2 class="bracket-heading">Visit &amp; <span>Reserve</span></h2>
         </div>
 
         <div class="contact-grid">
-          <!-- Left: Real Location, Hours, Map -->
-          <div class="info-panel reveal">
-            <div class="info-list">
+          <div class="contact-info-card">
+            <div class="info-rows">
               <div class="info-row">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
                 </div>
                 <div>
-                  <h3>Restaurant Address</h3>
+                  <strong>Address</strong>
                   <p>NH-49, Kali Mandir Rd, beside ICICI Bank, Purani Basti, Jharsuguda, Odisha 768202</p>
                 </div>
               </div>
 
               <div class="info-row">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
                 </div>
                 <div>
-                  <h3>Phone &amp; Reservations</h3>
+                  <strong>Phone</strong>
                   <p><a href="tel:+917008470870" class="tabular">070084 70870</a> (+91 70084 70870)</p>
                 </div>
               </div>
 
               <div class="info-row">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </div>
                 <div>
-                  <h3>Opening Hours (Monday – Sunday)</h3>
-                  <p>
-                    Lunch: 11:30 AM – 3:00 PM<br />
-                    Dinner: 6:00 PM – 10:00 PM
-                  </p>
+                  <strong>Opening Hours (Mon – Sun)</strong>
+                  <p>Lunch: 11:30 AM – 3:00 PM · Dinner: 6:00 PM – 10:00 PM</p>
                 </div>
               </div>
+            </div>
 
-              <div class="facility-highlights">
-                <span>Dine-in &amp; Takeout</span>
-                <span aria-hidden="true">·</span>
-                <span>Family &amp; Group Dining</span>
-                <span aria-hidden="true">·</span>
-                <span>Free Parking</span>
-                <span aria-hidden="true">·</span>
-                <span>UPI &amp; Card Payments Accepted</span>
-              </div>
+            <div class="facility-line">
+              Dine-in &amp; Takeout · Family &amp; Group Dining · Free Parking · UPI &amp; Cards Accepted
             </div>
 
             <div class="map-frame-wrap">
@@ -2388,37 +2123,34 @@
             </div>
           </div>
 
-          <!-- Right: Table Reservation & Pre-Order Form -->
-          <div class="reservation-card reveal">
-            <h3>Reserve a Table or Pre-Order</h3>
-            <p>Book family seating or request a fresh handi ready for pickup.</p>
-
+          <div class="reservation-card">
+            <h3>Reserve a Table</h3>
             <form id="reservation-form" novalidate>
               <div class="form-grid">
                 <div class="form-field">
                   <label for="res-name">Full Name</label>
-                  <input id="res-name" name="name" type="text" placeholder="e.g., Rajesh Patel" required />
+                  <input id="res-name" name="name" type="text" placeholder="Your name" required />
                   <span class="field-error" id="err-name" aria-live="polite"></span>
                 </div>
 
                 <div class="form-field">
                   <label for="res-phone">Phone Number</label>
-                  <input id="res-phone" name="phone" type="tel" placeholder="e.g., 98765 43210" required />
+                  <input id="res-phone" name="phone" type="tel" placeholder="10-digit mobile" required />
                   <span class="field-error" id="err-phone" aria-live="polite"></span>
                 </div>
 
                 <div class="form-field">
-                  <label for="res-guests">Number of Guests</label>
+                  <label for="res-guests">Guests</label>
                   <select id="res-guests" name="guests">
                     <option value="2 Guests">2 Guests</option>
                     <option value="4 Guests" selected>4 Guests</option>
                     <option value="6 Guests">6 Guests</option>
-                    <option value="8+ Group Dining">8+ Group Dining</option>
+                    <option value="8+ Group">8+ Group</option>
                   </select>
                 </div>
 
                 <div class="form-field">
-                  <label for="res-date">Preferred Date</label>
+                  <label for="res-date">Date</label>
                   <input id="res-date" name="date" type="date" required />
                   <span class="field-error" id="err-date" aria-live="polite"></span>
                 </div>
@@ -2432,15 +2164,13 @@
                 </div>
 
                 <div class="form-field is-full">
-                  <label for="res-notes">Special Requests or Pre-Order Items</label>
-                  <textarea id="res-notes" name="notes" rows="3" placeholder="Optional: e.g., Window family table, Special Chowki Mandi pre-order, mild spice..."></textarea>
+                  <label for="res-notes">Special Requests</label>
+                  <textarea id="res-notes" name="notes" rows="2" placeholder="Optional pre-order or seating preference"></textarea>
                 </div>
 
                 <div class="form-actions">
-                  <button type="submit" class="btn-primary">Confirm Reservation</button>
-                  <button type="button" class="whatsapp-btn" id="whatsapp-reserve-btn">
-                    Send via WhatsApp
-                  </button>
+                  <button type="submit" class="btn-orange">Confirm Reservation</button>
+                  <button type="button" class="btn-ghost" id="whatsapp-reserve-btn">Send via WhatsApp</button>
                 </div>
               </div>
             </form>
@@ -2449,8 +2179,8 @@
               <h4>Table Request Confirmed</h4>
               <p class="reservation-summary" id="reservation-summary-text"></p>
               <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" id="confirmed-whatsapp-link">Share on WhatsApp</a>
-                <button type="button" class="whatsapp-btn" id="reset-reservation-btn">Make Another Booking</button>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn-orange" id="confirmed-whatsapp-link">Share on WhatsApp</a>
+                <button type="button" class="btn-ghost" id="reset-reservation-btn">New Booking</button>
               </div>
             </div>
           </div>
@@ -2459,26 +2189,72 @@
     </section>
   </main>
 
+  <!-- 4-Column Reference Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <a href="#home" class="footer-brand">The <span>BiryaniWalla</span></a>
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#menu">Menu</a>
-          <a href="#about">About Us</a>
-          <a href="#special">Special</a>
-          <a href="#contact">Contact</a>
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="footer-brand">The BiryaniWalla</a>
+          <p class="footer-desc">
+            Royal Dum Biryani &amp; Authentic Mandi in Purani Basti, Jharsuguda, Odisha.
+          </p>
+          <div class="footer-icon-row">
+            <a href="tel:+917008470870" class="footer-sq-icon" aria-label="Call The BiryaniWalla">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </a>
+            <a href="https://maps.google.com/?q=21.8660926,84.0258259" target="_blank" rel="noopener noreferrer" class="footer-sq-icon" aria-label="Open Google Maps">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </a>
+            <a href="https://wa.me/917008470870" target="_blank" rel="noopener noreferrer" class="footer-sq-icon" aria-label="WhatsApp order">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#special">Special</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Dining Info</h4>
+          <ul>
+            <li>Dine-in &amp; Takeout</li>
+            <li>Family &amp; Group Dining</li>
+            <li>Free Parking</li>
+            <li>UPI &amp; Cards Accepted</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Callback</h4>
+          <form class="footer-callback-form" id="footer-callback-form">
+            <input type="tel" id="callback-phone" placeholder="Enter your mobile number" aria-label="Enter your mobile number" required />
+            <button type="submit" class="btn-orange" style="width: 100%;">Request Callback</button>
+          </form>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <span>NH-49, Kali Mandir Rd, beside ICICI Bank, Purani Basti, Jharsuguda, Odisha 768202</span>
-        <span>Open Daily · +91 70084 70870</span>
+        <span>© 2026 The BiryaniWalla · NH-49, Kali Mandir Rd, Purani Basti, Jharsuguda, Odisha 768202</span>
       </div>
     </div>
   </footer>
 
-  <!-- Quick Order / Inquiry Bag Slide-Over Drawer -->
+  <!-- Order Bag Slide-Over Drawer -->
   <div class="drawer-backdrop" id="bag-backdrop" aria-hidden="true"></div>
   <aside class="bag-drawer" id="bag-drawer" role="dialog" aria-modal="true" aria-label="Order Bag" aria-hidden="true">
     <div class="bag-drawer-header">
@@ -2494,11 +2270,10 @@
     <div class="bag-drawer-body">
       <div class="bag-empty" id="bag-empty-state">
         <strong>Your bag is empty</strong>
-        <p>Select biryanis, mandi platters, or starters from the menu to build a quick takeout or dine-in inquiry.</p>
+        <p>Add biryanis, mandi platters, or starters from the menu.</p>
       </div>
 
       <div class="bag-list" id="bag-items-list"></div>
-
       <div class="bag-order-success" id="bag-order-success" aria-live="polite"></div>
     </div>
 
@@ -2513,9 +2288,9 @@
         <span class="tabular" id="bag-subtotal">₹0</span>
       </div>
 
-      <button type="button" class="btn-primary" id="submit-bag-inquiry" style="width: 100%;">Place Quick Order Inquiry</button>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" id="bag-whatsapp-link" style="width: 100%; text-align: center;">Send Order via WhatsApp</a>
-      <button type="button" id="clear-bag-btn" style="font-size: 0.8125rem; font-weight: 600; color: var(--ink-muted-light); padding: 4px 8px; align-self: center; text-decoration: underline;">Clear Order Bag</button>
+      <button type="button" class="btn-orange" id="submit-bag-inquiry" style="width: 100%;">Place Quick Order Inquiry</button>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-ghost" id="bag-whatsapp-link" style="width: 100%;">Send Order via WhatsApp</a>
+      <button type="button" id="clear-bag-btn" style="font-size: 0.8125rem; color: var(--text-muted); padding: 4px; align-self: center; text-decoration: underline;">Clear Order Bag</button>
     </div>
   </aside>
 
@@ -2530,56 +2305,44 @@
         chickenMandi: '/src/assets/images/platter_chicken_mandi_1794886679321.jpg',
         muttonMandi: '/src/assets/images/platter_mutton_mandi_1794886671463.jpg',
         starters: '/src/assets/images/tandoor_kebabs_starters_1794886700520.jpg',
-        spices: '/src/assets/images/about_dum_spices_1794886671202.jpg',
-        chowki: '/src/assets/images/special_chowki_feast_1794886716918.jpg'
+        spices: '/src/assets/images/about_dum_spices_1794886671202.jpg'
       };
 
       const MENU_ITEMS = [
-        // Signature Biryanis
         {
           id: 'hyd-chicken-dum',
           name: 'Hyderabadi Chicken Dum Biryani',
           category: 'biryani',
-          categoryLabel: 'Signature Biryani',
           isVeg: false,
-          spice: 'Medium Spice',
           image: IMAGES.biryani,
-          description: 'Aged long-grain basmati slow-sealed over spiced chicken, saffron, mint, and caramelized birista.',
+          description: 'Saffron basmati sealed over spiced chicken, mint & caramelized birista.',
           portions: [{ label: 'Regular', price: 220 }]
         },
         {
           id: 'special-mutton-dum',
           name: 'Special Mutton Dum Biryani',
           category: 'biryani',
-          categoryLabel: 'Signature Biryani',
           isVeg: false,
-          spice: 'Rich Spice',
           image: IMAGES.muttonMandi,
-          description: 'Tender bone-in mutton marinated overnight in yogurt and whole garam masala, steamed on dum.',
+          description: 'Slow-cooked bone-in mutton layered with fragrant basmati & whole spices.',
           portions: [{ label: 'Regular', price: 310 }]
         },
         {
           id: 'paneer-tikka-dum',
           name: 'Paneer Tikka Dum Biryani',
           category: 'biryani',
-          categoryLabel: 'Signature Biryani',
           isVeg: true,
-          spice: 'Mild-Medium',
           image: IMAGES.biryani,
-          description: 'Char-grilled cottage cheese cubes layered with saffron basmati, fried cashews, and fresh herbs.',
+          description: 'Char-grilled cottage cheese with saffron basmati & roasted cashews.',
           portions: [{ label: 'Regular', price: 200 }]
         },
-
-        // Royal Mandi (Real menu prices & portions!)
         {
           id: 'chicken-alfaham-mandi',
           name: 'Chicken Alfaham Mandi',
           category: 'mandi',
-          categoryLabel: 'Royal Mandi',
           isVeg: false,
-          spice: 'Smoky Pepper',
           image: IMAGES.chickenMandi,
-          description: 'Charcoal-grilled Arabian spiced chicken served over fragrant mandi rice with red chutney & garlic dip.',
+          description: 'Charcoal-grilled spiced chicken over saffron mandi rice with dips.',
           portions: [
             { label: 'Single', price: 239 },
             { label: 'Half', price: 519 },
@@ -2590,11 +2353,9 @@
           id: 'chicken-juicy-mandi',
           name: 'Chicken Juicy Mandi',
           category: 'mandi',
-          categoryLabel: 'Royal Mandi',
           isVeg: false,
-          spice: 'Savory Herb',
           image: IMAGES.chickenMandi,
-          description: 'Succulent slow-roasted chicken glazed in rich house stock over buttered saffron mandi rice.',
+          description: 'Slow-roasted chicken glazed in savory stock atop nutty mandi rice.',
           portions: [
             { label: 'Single', price: 249 },
             { label: 'Half', price: 499 },
@@ -2605,11 +2366,9 @@
           id: 'mutton-afghani-mandi',
           name: 'Mutton Afghani Mandi',
           category: 'mandi',
-          categoryLabel: 'Royal Mandi',
           isVeg: false,
-          spice: 'Aromatic Mild',
           image: IMAGES.muttonMandi,
-          description: 'Fall-off-the-bone mutton slow-cooked in creamy Afghani aromatics atop nutty saffron rice.',
+          description: 'Tender mutton in creamy Afghani spices over golden saffron rice.',
           portions: [
             { label: 'Single', price: 299 },
             { label: 'Half', price: 599 },
@@ -2620,11 +2379,9 @@
           id: 'mutton-ghee-roast-mandi',
           name: 'Mutton Ghee Roast Mandi',
           category: 'mandi',
-          categoryLabel: 'Royal Mandi',
           isVeg: false,
-          spice: 'Fiery Ghee Roast',
           image: IMAGES.muttonMandi,
-          description: 'Mutton seared in pure clarified butter and roasted red chillies, served on golden mandi rice.',
+          description: 'Mutton seared in pure ghee & roasted red chillies over mandi rice.',
           portions: [
             { label: 'Single', price: 299 },
             { label: 'Half', price: 549 },
@@ -2632,103 +2389,52 @@
           ]
         },
         {
-          id: 'fish-fry-mandi',
-          name: 'Fish Special Fry Mandi',
-          category: 'mandi',
-          categoryLabel: 'Royal Mandi',
-          isVeg: false,
-          spice: 'Crispy Spice',
-          image: IMAGES.chickenMandi,
-          description: 'Crisp masala-crusted fish fillets arranged over spiced mandi rice with lemon & sliced onions.',
-          portions: [
-            { label: 'Single', price: 249 },
-            { label: 'Half', price: 439 },
-            { label: 'Full', price: 899 }
-          ]
-        },
-        {
           id: 'paneer-afghani-mandi',
           name: 'Paneer Afghani Mandi',
           category: 'mandi',
-          categoryLabel: 'Royal Mandi',
           isVeg: true,
-          spice: 'Mild Aromatic',
           image: IMAGES.chickenMandi,
-          description: 'Velvety roasted paneer cubes paired with cashew-studded saffron mandi rice and creamy gravy.',
+          description: 'Velvety roasted paneer cubes with cashew-studded saffron mandi rice.',
           portions: [
             { label: 'Single', price: 209 },
             { label: 'Half', price: 399 },
             { label: 'Full', price: 749 }
           ]
         },
-
-        // Tandoor & Starters
         {
           id: 'chicken-tangadi',
-          name: 'Chicken Murani Tangadi (2 Pcs)',
+          name: 'Chicken Murani Tangadi',
           category: 'starters',
-          categoryLabel: 'Tandoor & Starters',
           isVeg: false,
-          spice: 'Smoky Tandoor',
           image: IMAGES.starters,
-          description: 'Juicy charcoal-roasted chicken drumsticks marinated in yogurt, mace, and kasuri methi.',
+          description: 'Two smoky charcoal-roasted drumsticks marinated in yogurt & herbs.',
           portions: [{ label: '2 Pieces', price: 149 }]
-        },
-        {
-          id: 'chicken-alfaham-piece',
-          name: 'Charcoal Chicken Alfaham',
-          category: 'starters',
-          categoryLabel: 'Tandoor & Starters',
-          isVeg: false,
-          spice: 'Pepper & Garlic',
-          image: IMAGES.starters,
-          description: 'Arabian-spiced grilled chicken quarter finished over glowing embers with mint chutney.',
-          portions: [{ label: '1 Quarter', price: 149 }]
         },
         {
           id: 'paneer-65',
           name: 'Crispy Paneer 65',
           category: 'starters',
-          categoryLabel: 'Tandoor & Starters',
           isVeg: true,
-          spice: 'Crisp & Tangy',
           image: IMAGES.starters,
-          description: 'Golden fried cottage cheese tossed with crackling curry leaves, green chillies, and garlic.',
+          description: 'Golden cottage cheese tossed with curry leaves, chillies & garlic.',
           portions: [{ label: 'Plate', price: 160 }]
         },
-
-        // Accompaniments & Beverages
         {
           id: 'burani-raita-salan',
-          name: 'Burani Raita & Mirchi Ka Salan',
+          name: 'Burani Raita & Salan',
           category: 'accompaniments',
-          categoryLabel: 'Accompaniments',
           isVeg: true,
-          spice: 'Cooling & Nutty',
           image: IMAGES.spices,
-          description: 'Roasted-garlic whipped yogurt paired with slow-simmered peanut-sesame Hyderabadi salan.',
+          description: 'Garlic whipped yogurt paired with Hyderabadi peanut-sesame salan.',
           portions: [{ label: 'Combo', price: 50 }]
         },
         {
-          id: 'afghani-gravy-mandi-rice',
-          name: 'Extra Mandi Rice & Afghani Gravy',
-          category: 'accompaniments',
-          categoryLabel: 'Accompaniments',
-          isVeg: true,
-          spice: 'Mild',
-          image: IMAGES.spices,
-          description: 'Fragrant saffron-infused mandi rice portion served alongside velvety Afghani gravy.',
-          portions: [{ label: 'Portion', price: 188 }]
-        },
-        {
           id: 'mint-masala-chaas',
-          name: 'Smoked Jeera & Mint Chaas',
+          name: 'Smoked Jeera Chaas',
           category: 'accompaniments',
-          categoryLabel: 'Beverages',
           isVeg: true,
-          spice: 'Refreshing',
           image: IMAGES.spices,
-          description: 'Chilled spiced buttermilk tempered with roasted cumin, black salt, and garden mint.',
+          description: 'Chilled spiced buttermilk tempered with roasted cumin & garden mint.',
           portions: [{ label: 'Glass', price: 60 }]
         }
       ];
@@ -2736,7 +2442,7 @@
       const SPECIAL_LOOKUP = {
         'special-chowki-mandi': {
           id: 'special-chowki-mandi',
-          name: 'Special Chowki Mandi Platter',
+          name: 'Special Chowki Mandi',
           portion: 'Full Feast (4-6 Guests)',
           price: 1599
         },
@@ -2745,27 +2451,14 @@
           name: 'Special Mix Mandi',
           portion: 'Half Platter',
           price: 849
-        },
-        'mutton-madfoon-half': {
-          id: 'mutton-madfoon-half',
-          name: 'Mutton Madfoon Mandi',
-          portion: 'Half Platter',
-          price: 599
-        },
-        'royal-handi-family': {
-          id: 'royal-handi-family',
-          name: 'Royal Chicken Dum Family Pack',
-          portion: 'Family Handi (4 Guests)',
-          price: 799
         }
       };
 
-      // State
       const state = {
         activeCategory: 'all',
         vegOnly: false,
         selectedPortions: {},
-        bag: [], // { key, id, name, portion, price, qty }
+        bag: [],
         orderMode: 'Takeout Pickup'
       };
 
@@ -2773,7 +2466,6 @@
         state.selectedPortions[item.id] = 0;
       });
 
-      // DOM References
       const header = document.getElementById('site-header');
       const menuGrid = document.getElementById('menu-grid');
       const tabButtons = document.querySelectorAll('.menu-tab');
@@ -2796,10 +2488,9 @@
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function () {
           toastEl.classList.remove('is-visible');
-        }, 2600);
+        }, 2500);
       }
 
-      // Render Menu
       function renderMenu() {
         const filtered = MENU_ITEMS.filter(function (item) {
           const categoryMatch = state.activeCategory === 'all' || item.category === state.activeCategory;
@@ -2808,7 +2499,7 @@
         });
 
         if (filtered.length === 0) {
-          menuGrid.innerHTML = '<div style="grid-column: 1 / -1; padding: 48px 24px; text-align: center; background: #fff; border-radius: 12px; border: 1px solid rgba(20,17,15,0.1);"><strong>No matching dishes in this category.</strong><p style="margin-top:6px;color:#59514B;">Try switching off the Pure Veg filter or choosing All.</p></div>';
+          menuGrid.innerHTML = '<div style="grid-column: 1 / -1; padding: 36px; text-align: center; border: 1px solid rgba(255,255,255,0.12); border-radius: 18px;">No dishes match this filter.</div>';
           return;
         }
 
@@ -2818,7 +2509,7 @@
           const portionHtml = item.portions.length > 1
             ? '<div class="portion-row" role="group" aria-label="Portion size for ' + item.name + '">' +
                 item.portions.map(function (p, idx) {
-                  return '<button type="button" class="portion-btn ' + (idx === portionIdx ? 'is-selected' : '') + '" data-item-id="' + item.id + '" data-portion-idx="' + idx + '">' + p.label + ' · ₹' + p.price + '</button>';
+                  return '<button type="button" class="portion-btn ' + (idx === portionIdx ? 'is-selected' : '') + '" data-item-id="' + item.id + '" data-portion-idx="' + idx + '">' + p.label + '</button>';
                 }).join('') +
               '</div>'
             : '';
@@ -2829,27 +2520,27 @@
                 '<img src="' + item.image + '" alt="' + item.name + '" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'is-broken\')" />' +
                 '<div class="media-fallback"><span>' + item.name + '</span></div>' +
               '</div>' +
-              '<div class="dish-body">' +
-                '<div class="dish-meta-line">' +
-                  '<span class="diet-mark ' + (item.isVeg ? 'is-veg' : '') + '" aria-label="' + (item.isVeg ? 'Vegetarian' : 'Non-Vegetarian') + '"></span>' +
-                  '<span>' + item.categoryLabel + '</span>' +
-                  '<span aria-hidden="true">·</span>' +
-                  '<span>' + item.spice + '</span>' +
-                '</div>' +
+              '<div class="dish-title-row">' +
+                '<span class="diet-mark ' + (item.isVeg ? 'is-veg' : '') + '" aria-label="' + (item.isVeg ? 'Vegetarian' : 'Non-Vegetarian') + '"></span>' +
                 '<h3 class="dish-title">' + item.name + '</h3>' +
-                '<p class="dish-desc">' + item.description + '</p>' +
-                portionHtml +
-                '<div class="dish-footer">' +
-                  '<span class="dish-price tabular">₹' + activePortion.price + '</span>' +
-                  '<button type="button" class="add-dish-btn" data-add-id="' + item.id + '">Add to Bag</button>' +
-                '</div>' +
+              '</div>' +
+              '<p class="dish-desc">' + item.description + '</p>' +
+              portionHtml +
+              '<div class="dish-footer">' +
+                '<span class="dish-price tabular">₹' + activePortion.price + '/-</span>' +
+                '<button type="button" class="icon-bag-btn add-dish-btn" data-add-id="' + item.id + '" aria-label="Add ' + item.name + ' to bag">' +
+                  '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+                    '<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>' +
+                    '<line x1="3" y1="6" x2="21" y2="6"></line>' +
+                    '<path d="M16 10a4 4 0 0 1-8 0"></path>' +
+                  '</svg>' +
+                '</button>' +
               '</div>' +
             '</article>'
           );
         }).join('');
       }
 
-      // Bag Operations
       function addToBag(itemObj) {
         bagOrderSuccess.classList.remove('is-visible');
         bagOrderSuccess.innerHTML = '';
@@ -2868,7 +2559,7 @@
           });
         }
         renderBag();
-        showToast('Added ' + itemObj.name + ' (' + itemObj.portion + ') to your bag');
+        showToast('Added ' + itemObj.name + ' (' + itemObj.portion + ')');
       }
 
       function updateBagQty(key, delta) {
@@ -2887,7 +2578,7 @@
           return '• ' + b.qty + 'x ' + b.name + ' (' + b.portion + ') — ₹' + (b.price * b.qty);
         });
         const total = state.bag.reduce(function (sum, b) { return sum + b.price * b.qty; }, 0);
-        const msg = 'Hello The BiryaniWalla (Jharsuguda),\nOrder Type: ' + state.orderMode + '\n\n' + lines.join('\n') + '\n\nEstimated Total: ₹' + total;
+        const msg = 'Hello The BiryaniWalla (Jharsuguda),\nOrder Type: ' + state.orderMode + '\n\n' + lines.join('\n') + '\n\nTotal: ₹' + total;
         return 'https://wa.me/917008470870?text=' + encodeURIComponent(msg);
       }
 
@@ -2914,7 +2605,7 @@
             '<div class="bag-item">' +
               '<div class="bag-item-info">' +
                 '<h4>' + item.name + '</h4>' +
-                '<span>' + item.portion + ' · ₹' + item.price + ' each</span>' +
+                '<span>' + item.portion + ' · ₹' + item.price + '</span>' +
               '</div>' +
               '<div class="qty-stepper">' +
                 '<button type="button" class="qty-btn" data-qty-key="' + item.key + '" data-delta="-1" aria-label="Decrease quantity of ' + item.name + '">−</button>' +
@@ -2927,6 +2618,8 @@
       }
 
       function openBag() {
+        clearTimeout(toastTimer);
+        toastEl.classList.remove('is-visible');
         bagDrawer.classList.add('is-open');
         bagBackdrop.classList.add('is-open');
         bagDrawer.setAttribute('aria-hidden', 'false');
@@ -2939,7 +2632,6 @@
         bagDrawer.setAttribute('aria-hidden', 'true');
       }
 
-      // Menu Event Delegation
       menuGrid.addEventListener('click', function (e) {
         const portionBtn = e.target.closest('.portion-btn');
         if (portionBtn) {
@@ -2966,7 +2658,6 @@
         }
       });
 
-      // Category Tabs
       tabButtons.forEach(function (btn) {
         btn.addEventListener('click', function () {
           tabButtons.forEach(function (b) {
@@ -2980,14 +2671,12 @@
         });
       });
 
-      // Veg Only Filter
       vegToggle.addEventListener('click', function () {
         state.vegOnly = !state.vegOnly;
         vegToggle.setAttribute('aria-pressed', state.vegOnly ? 'true' : 'false');
         renderMenu();
       });
 
-      // Special One-Click Order
       document.querySelectorAll('.order-special-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
           const specialId = btn.getAttribute('data-special-id');
@@ -2998,7 +2687,6 @@
         });
       });
 
-      // Bag Drawer Controls
       document.getElementById('open-bag-btn').addEventListener('click', openBag);
       document.getElementById('close-bag-btn').addEventListener('click', closeBag);
       bagBackdrop.addEventListener('click', closeBag);
@@ -3026,8 +2714,8 @@
         const count = state.bag.reduce(function (sum, b) { return sum + b.qty; }, 0);
         const ref = 'BW-' + Math.floor(1000 + Math.random() * 9000);
         bagOrderSuccess.innerHTML =
-          '<strong style="color:#1B5E20; display:block; margin-bottom:6px;">Order Inquiry Ready (' + ref + ')</strong>' +
-          '<span>' + count + ' item(s) · <strong>' + state.orderMode + '</strong> · Total <strong>₹' + total.toLocaleString('en-IN') + '</strong>. Call <a href="tel:+917008470870" style="text-decoration:underline; font-weight:600;">+91 70084 70870</a> or send via WhatsApp below to confirm kitchen prep.</span>';
+          '<strong style="color:#7AE5A4; display:block; margin-bottom:4px;">Order Inquiry Ready (' + ref + ')</strong>' +
+          '<span>' + count + ' item(s) · ' + state.orderMode + ' · <strong>₹' + total.toLocaleString('en-IN') + '</strong>. Call +91 70084 70870 or send via WhatsApp below.</span>';
         bagOrderSuccess.classList.add('is-visible');
       });
 
@@ -3039,7 +2727,6 @@
         showToast('Order bag cleared');
       });
 
-      // Mobile Navigation Drawer
       const mobileDrawer = document.getElementById('mobile-drawer');
       const openMobileBtn = document.getElementById('open-mobile-nav');
       const closeMobileBtn = document.getElementById('close-mobile-nav');
@@ -3063,14 +2750,12 @@
         }
       });
 
-      // Reservation Form & Validation
       const resForm = document.getElementById('reservation-form');
       const resDateInput = document.getElementById('res-date');
       const resConfirmBox = document.getElementById('reservation-confirmation');
       const resSummaryText = document.getElementById('reservation-summary-text');
       const confirmedWaLink = document.getElementById('confirmed-whatsapp-link');
 
-      // Default date to today in local YYYY-MM-DD
       const todayIso = new Date().toISOString().split('T')[0];
       resDateInput.value = todayIso;
       resDateInput.min = todayIso;
@@ -3082,7 +2767,6 @@
         const guestsVal = document.getElementById('res-guests').value;
         const slotVal = document.getElementById('res-slot').value;
         const notesVal = document.getElementById('res-notes').value.trim();
-
         const digits = phoneRaw.replace(/\D/g, '');
         let valid = true;
 
@@ -3091,15 +2775,15 @@
         document.getElementById('err-date').textContent = '';
 
         if (nameVal.length < 2) {
-          document.getElementById('err-name').textContent = 'Please enter your full name.';
+          document.getElementById('err-name').textContent = 'Please enter your name.';
           valid = false;
         }
         if (digits.length < 10) {
-          document.getElementById('err-phone').textContent = 'Enter a valid 10-digit mobile number.';
+          document.getElementById('err-phone').textContent = 'Enter a 10-digit mobile number.';
           valid = false;
         }
         if (!dateVal) {
-          document.getElementById('err-date').textContent = 'Please select a reservation date.';
+          document.getElementById('err-date').textContent = 'Select a date.';
           valid = false;
         }
 
@@ -3111,14 +2795,9 @@
 
       function buildReservationWhatsApp(data) {
         const text =
-          'Hello The BiryaniWalla (Jharsuguda),\n' +
-          'I would like to reserve a table:\n' +
-          'Name: ' + data.name + '\n' +
-          'Phone: ' + data.phone + '\n' +
-          'Guests: ' + data.guests + '\n' +
-          'Date: ' + data.date + '\n' +
-          'Slot: ' + data.slot +
-          (data.notes ? '\nRequests: ' + data.notes : '');
+          'Hello The BiryaniWalla (Jharsuguda),\nTable Reservation:\nName: ' + data.name +
+          '\nPhone: ' + data.phone + '\nGuests: ' + data.guests + '\nDate: ' + data.date +
+          '\nSlot: ' + data.slot + (data.notes ? '\nRequests: ' + data.notes : '');
         return 'https://wa.me/917008470870?text=' + encodeURIComponent(text);
       }
 
@@ -3126,24 +2805,21 @@
         e.preventDefault();
         const check = validateReservation();
         if (!check.valid) return;
-
         const d = check.data;
         resForm.style.display = 'none';
         resSummaryText.innerHTML =
-          'Thank you, <strong>' + d.name + '</strong>. Your table request for <strong>' + d.guests +
+          'Thank you, <strong>' + d.name + '</strong>. Request for <strong>' + d.guests +
           '</strong> on <strong>' + d.date + '</strong> (<strong>' + d.slot +
-          '</strong>) has been logged for confirmation at +91 70084 70870.' +
-          (d.notes ? '<br />Note: ' + d.notes : '');
+          '</strong>) is ready for confirmation at +91 70084 70870.';
         confirmedWaLink.href = buildReservationWhatsApp(d);
         resConfirmBox.classList.add('is-visible');
-        showToast('Reservation request ready for ' + d.name);
+        showToast('Reservation ready for ' + d.name);
       });
 
       document.getElementById('whatsapp-reserve-btn').addEventListener('click', function () {
         const check = validateReservation();
         if (!check.valid) return;
-        const waUrl = buildReservationWhatsApp(check.data);
-        confirmedWaLink.href = waUrl;
+        confirmedWaLink.href = buildReservationWhatsApp(check.data);
         resForm.dispatchEvent(new Event('submit', { cancelable: true }));
       });
 
@@ -3154,49 +2830,39 @@
         resForm.style.display = 'block';
       });
 
-      // Scroll state for header + Active nav highlight via IntersectionObserver
-      window.addEventListener('scroll', function () {
-        header.classList.toggle('is-scrolled', window.scrollY > 24);
-      }, { passive: true });
+      document.getElementById('footer-callback-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const input = document.getElementById('callback-phone');
+        if (input.value.replace(/\D/g, '').length < 10) {
+          showToast('Enter a valid 10-digit number');
+          return;
+        }
+        input.value = '';
+        showToast('Callback request noted — or call +91 70084 70870');
+      });
 
       const navLinks = document.querySelectorAll('.nav-link');
-      const sections = ['home', 'menu', 'about', 'special', 'contact'].map(function (id) {
+      const sections = ['home', 'special', 'menu', 'about', 'contact'].map(function (id) {
         return document.getElementById(id);
       }).filter(Boolean);
 
-      if ('IntersectionObserver' in window) {
-        const navObserver = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              const id = entry.target.id;
-              navLinks.forEach(function (link) {
-                link.classList.toggle('is-active', link.getAttribute('data-section') === id);
-              });
-            }
-          });
-        }, { rootMargin: '-35% 0px -55% 0px' });
-
-        sections.forEach(function (sec) { navObserver.observe(sec); });
-
-        const revealObserver = new IntersectionObserver(function (entries, obs) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-revealed');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.01, rootMargin: '0px 0px 100px 0px' });
-
-        document.querySelectorAll('.reveal').forEach(function (el) {
-          revealObserver.observe(el);
+      function updateActiveNav() {
+        header.classList.toggle('is-scrolled', window.scrollY > 20);
+        const pivot = window.innerHeight * 0.35;
+        let currentId = 'home';
+        sections.forEach(function (sec) {
+          if (sec.getBoundingClientRect().top <= pivot) {
+            currentId = sec.id;
+          }
         });
-      } else {
-        document.querySelectorAll('.reveal').forEach(function (el) {
-          el.classList.add('is-revealed');
+        navLinks.forEach(function (link) {
+          link.classList.toggle('is-active', link.getAttribute('data-section') === currentId);
         });
       }
 
-      // Initialize UI
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+
       renderMenu();
       renderBag();
     })();
